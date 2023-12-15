@@ -21,6 +21,10 @@ import { LoginComponent } from './components/login/login.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SupportScoreWedgetComponent } from './components/support-score-wedget/support-score-wedget.component';
 import { VelocityWedgetComponent } from './components/velocity-wedget/velocity-wedget.component';
+import { NgChartsModule } from 'ng2-charts';
+import { TeamMembersComponent } from './components/team-members/team-members.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { FeedbackCommentsComponent } from './components/feedback-comments/feedback-comments.component';
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -41,7 +45,10 @@ const umModules: Type<any>[] = [
     LoginComponent,
     OverviewComponent,
     SupportScoreWedgetComponent,
-    VelocityWedgetComponent
+    VelocityWedgetComponent,
+    TeamMembersComponent,
+    TasksComponent,
+    FeedbackCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,7 @@ const umModules: Type<any>[] = [
     UxMultipleButtonModule,
     MatCardModule, MatButtonModule, MatGridListModule, MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule,
     ...umModules,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

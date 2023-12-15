@@ -45,3 +45,23 @@
     }
 }
 
+.chart-div {
+    margin-bottom: 15px;
+    
+    .current-score-div {
+        .current-score {
+            font-size: 34px;
+            margin-left: 10px;
+        }
+        .score-increment {
+            margin-left: 10px;
+        }
+
+        .current-score-cls {
+            position: absolute;
+            top: 107px;
+            left: 48px;
+        }
+    }
+}
+

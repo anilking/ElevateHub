@@ -1,6 +1,6 @@
 <mat-card class="main-card">
     <div class="support-cls">
-        <h3 class="title">Support Score</h3>
+        <h3 class="title">Velocity</h3>
         <mat-form-field class="select-field-cls">
             <mat-select>
               <mat-option value="Month" selected>Month</mat-option>
@@ -8,12 +8,34 @@
             </mat-select>
         </mat-form-field>
     </div>
+
+    <div class="chart-div">
+        <mat-grid-list cols="2">
+            <mat-grid-tile>
+                <div class="current-score-div">
+                    <span class="current-score">73</span> <span class="green score-increment">^ + 2.45%</span>
+                    <span class="current-score-cls">Total Velocity</span>
+
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <canvas baseChart
+                        [data]="barChartData"
+                        [options]="barChartOptions"
+                        [plugins]="barChartPlugins"
+                        [legend]="barChartLegend"
+                        [type]="'bar'">
+                </canvas>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
     <div class="bradge-cls">
         <div class="sub-div">
-            <div class="gold dot-cls left"></div> <span>Gold</span>
+            <div class="blue dot-cls left"></div> <span>TER</span>
         </div>
         <div class="sub-div">
-            <div class="silver dot-cls right"></div> <span>Silver</span>
+            <div class="blue dot-cls right"></div> <span>LOE</span>
         </div>
     </div>
     <div class="bradge-cls">

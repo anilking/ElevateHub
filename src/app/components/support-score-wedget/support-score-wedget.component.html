@@ -8,6 +8,26 @@
             </mat-select>
         </mat-form-field>
     </div>
+    <div class="chart-div">
+        <mat-grid-list cols="2">
+            <mat-grid-tile>
+                <div class="current-score-div">
+                    <span class="current-score">4.5</span> <span class="green score-increment">^ + 2.45%</span>
+                    <span class="current-score-cls">Current Score</span>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <canvas baseChart
+                    [type]="'pie'"
+                    [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend">
+                </canvas>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
     <div class="bradge-cls">
         <div class="sub-div">
             <div class="gold dot-cls left"></div> <span>Gold</span>
