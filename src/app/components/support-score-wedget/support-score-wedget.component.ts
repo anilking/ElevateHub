@@ -12,7 +12,10 @@ export class SupportScoreWedgetComponent {
   };
   public pieChartLabels = [ 'Gold', 'Silver' ];
   public pieChartDatasets = [ {
-    data: [ 75, 25 ]
+    data: [ 75, 25 ],
+    backgroundColor: [ '#FFC451', '#9F9F9F'],
+    hoverBackgroundColor: [ '#FFC451', '#9F9F9F'],
+    hoverBorderColor: [ '#FFC451', '#9F9F9F'],
   } ];
   public pieChartLegend = true;
   public pieChartPlugins = [];
