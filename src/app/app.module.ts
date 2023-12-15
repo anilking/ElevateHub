@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/login/login.component';
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -28,7 +29,8 @@ const umModules: Type<any>[] = [
   declarations: [
     AppComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
