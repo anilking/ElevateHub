@@ -1,0 +1,47 @@
+.main-card {
+    width: 387px;
+    height: 345px;
+    border-radius: 20px
+}
+
+.support-cls {
+    .title {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    .select-field-cls {
+        float: right;
+    }
+}
+
+.bradge-cls {
+    display: flex;
+
+    .sub-div{
+        width: 50%;
+        display: flex;
+        margin-left: 10%;
+    }
+    .dot-cls {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 6px;
+        margin-right: 2px;
+        margin-left: 10px;
+    }
+
+    .silver {
+        background-color: silver;
+    }
+
+    .gold {
+        background-color: gold;
+    }
+
+    .score-cls {
+        margin-left: 17%;
+    }
+}
+

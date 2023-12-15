@@ -1,0 +1,21 @@
+
+<mat-grid-list cols="3">
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <img mat-card-image class="image-cls" src="assets/images/user-profile.png" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <h3> {{user.name}}</h3>
+              <p>{{user.role}}</p>
+            </mat-card-content>
+          </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-support-score-wedget></app-support-score-wedget>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <app-velocity-wedget></app-velocity-wedget>
+    </mat-grid-tile>
+</mat-grid-list>
+  
