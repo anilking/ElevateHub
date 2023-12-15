@@ -31,7 +31,10 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@netcracker/ux-ng2/assets/styles/common/typography/typography.css",
+              "node_modules/@netcracker/ux-ng2/assets/styles/components.css",
+              "node_modules/@netcracker/um-ng2/styles/xe/css/base.css"
             ],
             "scripts": []
           },
@@ -102,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "789725c9-811a-47cc-843e-e4495f7409b4"
   }
 }

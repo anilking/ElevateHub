@@ -1,0 +1,31 @@
+<ux-header>
+    <ux-header-row [style.--ux-ng2-header-row-background-color]="'#0068ff'"
+        [style.--ux-ng2-header-button-background-color]="'#0068ff'">
+
+        <ux-header-logo class="cm-header__logo">
+        </ux-header-logo>
+
+        <ux-header-group class="cm-header__header-content">
+            <ux-header-title [text]="'Elevence Hub'">
+            </ux-header-title>
+
+        </ux-header-group>
+        <ux-header-group class="cm-header__header-actions">
+            <ux-header-button class="cm-header__user">
+                <!-- <ux-multiple-button #userButton
+                                    type="secondary"
+                                    attachPosition="bottom {{_attachPositionDirection}}"
+                                    [text]="_userName"
+                                    [items]="_userTabs"
+                                    [attachPositionsSequence]="['bottom ' + _attachPositionDirection, 'top ' + _attachPositionDirection]"
+                                    [uxTooltip]="!userButton.opened && 'module.header.label.profile' | translate"
+                                    [uxTooltipDelay]="1500"
+                                    [uxTooltipAttachPosition]="'bottom'"
+                                    [uxTooltipStyleClass]="'_white'"
+                                    (itemClick)="_onMultipleButtonItemClick($event.item)">
+                </ux-multiple-button> -->
+            </ux-header-button>
+        </ux-header-group>
+    </ux-header-row>
+
+</ux-header>
