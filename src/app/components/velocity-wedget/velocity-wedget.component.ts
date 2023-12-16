@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType} from 'chart.js';
+import { CommonService } from 'src/app/common-service.service';
 
 @Component({
   selector: 'app-velocity-wedget',
@@ -30,23 +31,49 @@ export class VelocityWedgetComponent {
   };
   public barChartType: ChartType = 'bar';
 
-  public barChartData: ChartData<'bar'> = {
-    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
-    datasets: [
-      {
-        data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'TMS',
-        barPercentage: 0.5,
-        borderRadius: 20,
-        backgroundColor: '#7551FF'
-      },
-      {
-        data: [28, 48, 40, 19, 86, 27, 90],
-        label: 'TER',
-        borderRadius: 20,
-        barPercentage: 0.5,
-        backgroundColor: '#5BABD5'
-      },
-    ],
-  };
+  public barChartData!: ChartData<'bar'>;
+
+  public velocityDetails: any;
+
+  constructor(private commonService: CommonService){
+
+  }
+
+  ngOnInit(){
+    this.commonService.getVelocityDetails().subscribe((velocityDetails) => {
+      this.velocityDetails = velocityDetails;
+      this.getValues(velocityDetails);
+    })
+  }
+
+  getValues(velocityDetails: any): any {
+    const labels:any[] = [];
+    const TERList: any[] = [];
+    const TMSList: any[] = [];
+    velocityDetails?.velocityDataSet.map((item: any) => {
+      labels.push(item.label);
+      TMSList.push(item.TMS);
+      TERList.push(item.TER);
+    })
+    this.barChartData = {
+      labels: labels,
+      datasets: [
+        {
+          data: TMSList,
+          label: 'TMS',
+          barPercentage: 0.5,
+          borderRadius: 20,
+          backgroundColor: '#7551FF'
+        },
+        {
+          data: TERList,
+          label: 'TER',
+          borderRadius: 20,
+          barPercentage: 0.5,
+          backgroundColor: '#5BABD5'
+        },
+      ],
+    };
+  }
+
 }

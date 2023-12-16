@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType} from "chart.js";
+import { CommonService } from 'src/app/common-service.service';
 
 @Component({
   selector: 'app-velocity-summary-wedget',
@@ -11,9 +12,11 @@ export class VelocitySummaryWedget {
     'Download Sales',
   ];
 
-  public _current: number = 40;
+  public _current!: number;
 
-  public _total: number = 150;
+  public _total: number = 100;
+
+  public velocityDetails: any = {};
 
   public _label: string = "Some label";
   public doughnutChartData: ChartData<'doughnut'> = {
@@ -32,4 +35,16 @@ export class VelocitySummaryWedget {
       }
     },
   };
+
+  constructor(private commonService: CommonService){
+
+  }
+
+  ngOnInit(){
+    this.commonService.getVelocityDetails().subscribe((velocityDetails) => {
+      this.velocityDetails = velocityDetails;
+      this._current = velocityDetails.TER;
+    })
+  }
+
 }

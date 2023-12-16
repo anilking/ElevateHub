@@ -4,8 +4,8 @@
   </div>
   <div class="chart-div">
     <div class="current-score-div">
-      <span class="current-score">4.5</span>
-      <span class="current-score-cls">Current Score</span>
+      <span class="current-score">{{velocityDetails.totleVelocity}}</span>
+      <span class="current-score-cls">Velocity Score</span>
     </div>
     <um-pie [current]="_current"
             [total]="_total"
@@ -18,19 +18,19 @@
     <div class="bradge-cls gold-border">
       <div class="sub-div">
         <div class="gold dot-cls left"></div>
-        <span class="text">Gold</span>
+        <span class="text">TER</span>
       </div>
       <div class="sub-div">
-        <span class="score-cls-perc">75%</span>
+        <span class="score-cls-perc">{{velocityDetails.TER}}%</span>
       </div>
     </div>
     <div class="bradge-cls yellow">
       <div class="sub-div score-cls">
         <div class="silver dot-cls left"></div>
-        <span class="text">Silver</span>
+        <span class="text">LOE</span>
       </div>
       <div class="sub-div score-cls-perc">
-        <span>25%</span>
+        <span>{{velocityDetails.LOE}}%</span>
       </div>
     </div>
   </div>
