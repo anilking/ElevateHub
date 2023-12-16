@@ -26,14 +26,17 @@ import {UxButtonModule} from "@netcracker/ux-ng2/button";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {UmNavigationBarModule} from "@netcracker/um-ng2/services/navigation-bar";
-import { NgChartsModule } from 'ng2-charts';
-import { TeamMembersComponent } from './components/team-members/team-members.component';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { FeedbackCommentsComponent } from './components/feedback-comments/feedback-comments.component';
-import { VelocityComponent } from './components/velocity/velocity.component';
-import { SupportScoreComponent } from './components/support-score/support-score.component';
-import { AssessmentPromotionComponent } from './components/assessment-promotion/assessment-promotion.component';
-import { PerformanceSummaryComponent } from './components/performance-summary/performance-summary.component';
+import {NgChartsModule} from 'ng2-charts';
+import {TeamMembersComponent} from './components/team-members/team-members.component';
+import {TasksComponent} from './components/tasks/tasks.component';
+import {FeedbackCommentsComponent} from './components/feedback-comments/feedback-comments.component';
+import {VelocityComponent} from './components/velocity/velocity.component';
+import {SupportScoreComponent} from './components/support-score/support-score.component';
+import {AssessmentPromotionComponent} from './components/assessment-promotion/assessment-promotion.component';
+import {PerformanceSummaryComponent} from './components/performance-summary/performance-summary.component';
+import {UMCardModule} from "@netcracker/um-ng2/components/card";
+import {UxDropdownFieldModule} from "@netcracker/ux-ng2/dropdown-field";
+import {UMPieModule} from "@netcracker/um-ng2/components/pie";
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
