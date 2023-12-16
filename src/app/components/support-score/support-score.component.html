@@ -8,35 +8,7 @@
     <div class="form-comments-cls">
       <app-support-score-form></app-support-score-form>
       <!--      <um-card class="_min-padding feedback-newcard">-->
-      <div class="feedback-comments">
-        <div class="card-title">Feedback & Comments</div>
-
-        <div class="comments-cls" *ngFor="let item of [1,2,3]">
-          <div class="comment-text">
-            <div class="left">
-              <div>
-                <img class="profilePicture" src="assets/themes/base/images/icons/user.png">
-              </div>
-              <div class="comments-cls-div">
-                <div class="title">Helped me to solve NTTNBP-128123</div>
-                <div class="comment">
-                  Swamy has provided information about UX-mask field. It helped
-                  me to solve NTTNBP-128123
-                </div>
-              </div>
-            </div>
-            <div class="badge-cls">
-              <ng-container *ngFor="let item of [1,2,3]">
-                <ng-container *ngTemplateOutlet="fillStarIcon"></ng-container>
-              </ng-container>
-              <ng-container *ngFor="let item of [1,2]">
-                <ng-container *ngTemplateOutlet="noFillStarIcon"></ng-container>
-              </ng-container>
-              <div class="star-comment-cls">You have earned a <b>Gold Badge</b> for this</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-feedback-comments></app-feedback-comments>
     </div>
   </div>
 </div>

@@ -60,7 +60,7 @@
   }
 }
 
-.second-row {
+::ng-deep .second-row {
   display: flex;
   min-height: 50%;
 
@@ -82,4 +82,15 @@
       width: calc(100% - 800px);
     }
   }
+
+  .form-comments-cls {
+    width: 100%;
+
+    .feedback-comments {
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+
+  }
+
 }

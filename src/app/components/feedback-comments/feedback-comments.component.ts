@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-feedback-comments',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./feedback-comments.component.scss']
 })
 export class FeedbackCommentsComponent {
+
+  @Input()
+  overview: string = "no";
 
 }

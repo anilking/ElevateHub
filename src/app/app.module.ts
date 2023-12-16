@@ -44,6 +44,7 @@ import {UxTextAreaFieldModule} from "@netcracker/ux-ng2/textarea-field";
 import {UxTooltipModule} from "@netcracker/ux-ng2/tooltip";
 import {UxSwitcherFieldModule} from "@netcracker/ux-ng2/switcher-field";
 import {UxReferenceFieldModule} from "@netcracker/ux-ng2/reference-field";
+import {VelocitySummaryWedget} from "./components/velocity-summary-wedget/velocity-summary-wedget";
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -72,7 +73,8 @@ const umModules: Type<any>[] = [
     SupportScoreComponent,
     AssessmentPromotionComponent,
     PerformanceSummaryComponent,
-    SupportScoreFormComponent
+    SupportScoreFormComponent,
+    VelocitySummaryWedget
   ],
   imports: [
     BrowserModule,
