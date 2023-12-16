@@ -1,60 +1,61 @@
 .support-score {
-    margin-top: 20px;
+  margin-top: 10px;
 }
 
 .form-container {
-    margin-top: 18px;
-    width: 1173px;
-    // height: 302px;
-    // top: 224px;
-    // left: 727px
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    padding: 40px;
-    display: flex;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  padding: 40px;
+  display: flex;
 }
 
 .form-container .left_panel {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .form-container .left_panel .badges {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
+
 .form-container__search {
-    width: 275px;
-    // height: 20px !important;
-    border-radius: 49px;
+  width: 275px;
+  border-radius: 49px;
 }
+
 .ux-search-field__input-wrapper {
-    height: 31px;
-    border-radius: 49px;
-    width: 248px;
-    background-color: #E5EDFF;
+  height: 31px;
+  border-radius: 49px;
+  width: 248px;
+  background-color: #E5EDFF;
 }
 
 .vertical-line {
-    width: 1px;
-    height: 252px; /* Adjust the height as needed */
-    margin: 0 auto; /* Center the line horizontally */
-    background-color: rgba(0, 0, 0, 1);
-    opacity: 0.1;
-    margin: 0 16px 0 16px;
-  }
+  width: 1px;
+  height: 252px; /* Adjust the height as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.1;
+  margin: 0 16px 0 16px;
+}
 
 .support_description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
 }
 
 .support_description .footer_buttons {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 
+.ux-reference-field, .ux-textarea-field {
+  display: flex;
+}
 
 

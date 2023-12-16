@@ -1,65 +1,160 @@
-<!-- <mat-grid-list cols="3">
-    <mat-grid-tile>
-        <app-support-score-wedget></app-support-score-wedget>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="2">
-        <mat-card class="feedback-card">
-            <mat-card-header>
-              <mat-card-title class="card-title">Feedback & Comments</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-list>
-                      <mat-list-item *ngFor="let item of [1,2,3,4,5]">
-                        <mat-icon matListItemIcon>PA</mat-icon>
-                        <div class="mdc-list-item__content">
-                            <div class="mat-mdc-list-item-title mdc-list-item__primary-text width-50 comment-header">
-                                Helped me to solve NTTNBP-128123
-                            </div>
-                            <div class="mat-mdc-list-item-line mdc-list-item__secondary-text width-50 sub-comment-cls">
-                                Swamy has provided information about  UX-mask field. It helped me to solve NTTNBP-128123
-                            </div>
-                            <div class="stars-div-cls">
-                                <mat-icon aria-hidden="false" aria-label="Example star icon" fontIcon="star" *ngFor="let item of [1,2,3,4,5]"></mat-icon><br/>
-                                <span class="star-comment-cls">You have earned a Gold Badge for this</span>
-                            </div>
-                        </div>
-                        <mat-divider></mat-divider>
-                      </mat-list-item>
-                  </mat-list>
-            </mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-</mat-grid-list> -->
-
 <div class="overview-dashboard">
-    <div class="first-row">
+  <div class="first-row">
 
-        <um-card class="_min-padding support-score">
-            <app-support-score-wedget></app-support-score-wedget>
-        </um-card>
+    <um-card class="_min-padding support-score">
+      <app-support-score-wedget></app-support-score-wedget>
+    </um-card>
 
-        <div class="form-comments-cls">
-            <app-support-score-form></app-support-score-form>
-            <um-card class="_min-padding feedback-newcard">
-                <div class="card-title">Feedback & Comments</div>
-                <um-card class="_min-padding">
-                    <div class="comments-cls" *ngFor="let item of [1,2,3]">
-                        <img matListItemAvatar src="https://loremflickr.com/200/200" alt="avatar" />
-                        <div class="comments-cls-div">
-                            <h3 matListItemTitle>Helped me to solve NTTNBP-128123</h3>
-                            <p matListItemLine>
-                                <span>Swamy has provided information about UX-mask field. It helped
-                                    me to solve NTTNBP-128123</span>
-                            </p>
-                        </div>
-                        <div class="badge-cls">
-                            <mat-icon aria-hidden="false" aria-label="Example star icon" fontIcon="star"
-                                *ngFor="let item of [1,2,3,4,5]"></mat-icon><br />
-                            <span class="star-comment-cls">You have earned a Gold Badge for this</span>
-                        </div>
-                    </div>
-                </um-card>
-            </um-card>
+    <div class="form-comments-cls">
+      <app-support-score-form></app-support-score-form>
+      <!--      <um-card class="_min-padding feedback-newcard">-->
+      <div class="feedback-comments">
+        <div class="card-title">Feedback & Comments</div>
+
+        <div class="comments-cls" *ngFor="let item of [1,2,3]">
+          <div class="comment-text">
+            <div class="left">
+              <div>
+                <img class="profilePicture" src="assets/themes/base/images/icons/user.png">
+              </div>
+              <div class="comments-cls-div">
+                <div class="title">Helped me to solve NTTNBP-128123</div>
+                <div class="comment">
+                  Swamy has provided information about UX-mask field. It helped
+                  me to solve NTTNBP-128123
+                </div>
+              </div>
+            </div>
+            <div class="badge-cls">
+              <ng-container *ngFor="let item of [1,2,3]">
+                <ng-container *ngTemplateOutlet="fillStarIcon"></ng-container>
+              </ng-container>
+              <ng-container *ngFor="let item of [1,2]">
+                <ng-container *ngTemplateOutlet="noFillStarIcon"></ng-container>
+              </ng-container>
+              <div class="star-comment-cls">You have earned a <b>Gold Badge</b> for this</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+<ng-template #fillStarIcon>
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1_832)">
+      <path
+        d="M16.1039 1.36008L20.0719 9.40016L28.9447 10.6895C29.9544 10.8361 30.3575 12.077 29.6269 12.7892L23.2064 19.0474L24.7221 27.8843C24.8946 28.8899 23.8391 29.6568 22.936 29.182L15 25.0098L7.06393 29.182C6.16089 29.6567 5.10538 28.8899 5.27788 27.8843L6.79352 19.0474L0.373076 12.7891C-0.357527 12.0769 0.0456554 10.8362 1.05534 10.6894L9.9281 9.4001L13.8961 1.36008C14.3477 0.445139 15.6523 0.445139 16.1039 1.36008Z"
+        fill="url(#paint0_linear_1_832)"/>
+      <path d="M20.0718 9.40016L16.1038 1.36008C15.8781 0.902638 15.439 0.673889 15 0.673889V15.8958L20.0718 9.40016Z"
+            fill="url(#paint1_linear_1_832)"/>
+      <path
+        d="M23.2065 19.0474L29.6269 12.789C29.9873 12.4377 30.0714 11.9579 29.9432 11.5441L15 15.8958L23.2065 19.0474Z"
+        fill="url(#paint2_linear_1_832)"/>
+      <path d="M24.2361 29.0854L15 15.8958V25.0098L22.936 29.182C23.3892 29.4202 23.8806 29.3457 24.2361 29.0854Z"
+            fill="url(#paint3_linear_1_832)"/>
+      <path d="M15 15.8958L6.79354 19.0474L5.27796 27.8843C5.192 28.3853 5.41102 28.8269 5.76393 29.0854L15 15.8958Z"
+            fill="url(#paint4_linear_1_832)"/>
+      <path
+        d="M0.0566406 11.5442L14.9999 15.8958L9.92801 9.4001L1.05525 10.6895C0.54367 10.7637 0.188242 11.1191 0.0566406 11.5442Z"
+        fill="url(#paint5_linear_1_832)"/>
+      <path
+        d="M6.79366 19.0474L0.373212 12.7891C0.0128037 12.4378 -0.071278 11.9579 0.056866 11.5442L15.0001 15.8958L6.79366 19.0474Z"
+        fill="url(#paint6_linear_1_832)"/>
+    </g>
+    <defs>
+      <linearGradient id="paint0_linear_1_832" x1="15.0005" y1="4.0154" x2="15.0005" y2="37.1169"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFCF95"/>
+        <stop offset="0.427" stop-color="#FFC954"/>
+        <stop offset="1" stop-color="#FFC200"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear_1_832" x1="22.7756" y1="8.28408" x2="12.7691" y2="8.28408"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear_1_832" x1="24.4851" y1="23.6153" x2="21.835" y2="10.565"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <linearGradient id="paint3_linear_1_832" x1="11.6354" y1="30.4736" x2="22.0144" y2="20.0946"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <linearGradient id="paint4_linear_1_832" x1="4.23396" y1="17.3483" x2="11.8842" y2="23.7485"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <linearGradient id="paint5_linear_1_832" x1="9.96868" y1="6.79099" x2="6.86859" y2="15.5912"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <linearGradient id="paint6_linear_1_832" x1="21.6384" y1="7.71" x2="-1.13724" y2="17.4103"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFC200" stop-opacity="0"/>
+        <stop offset="0.203" stop-color="#FFBB00" stop-opacity="0.203"/>
+        <stop offset="0.499" stop-color="#FFA700" stop-opacity="0.499"/>
+        <stop offset="0.852" stop-color="#FF8800" stop-opacity="0.852"/>
+        <stop offset="1" stop-color="#FF7800"/>
+      </linearGradient>
+      <clipPath id="clip0_1_832">
+        <rect width="30" height="30" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+</ng-template>
+
+
+<ng-template #noFillStarIcon>
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_1_1387)">
+      <path
+        d="M16.1039 1.36008L20.0719 9.40016L28.9447 10.6895C29.9544 10.8361 30.3575 12.077 29.6269 12.7892L23.2064 19.0474L24.7221 27.8843C24.8946 28.8899 23.8391 29.6568 22.936 29.182L15 25.0098L7.06393 29.182C6.16089 29.6567 5.10538 28.8899 5.27788 27.8843L6.79352 19.0474L0.373076 12.7891C-0.357527 12.0769 0.0456554 10.8362 1.05534 10.6894L9.9281 9.4001L13.8961 1.36008C14.3477 0.445139 15.6523 0.445139 16.1039 1.36008Z"
+        fill="#CBC4C4"/>
+      <path
+        d="M20.0718 9.40016L16.1038 1.36008C15.8781 0.902638 15.439 0.673889 15 0.673889V15.8958L20.0718 9.40016Z"
+        fill="#CBC4C4"/>
+      <path
+        d="M23.2065 19.0474L29.6269 12.789C29.9873 12.4377 30.0714 11.9579 29.9432 11.5441L15 15.8958L23.2065 19.0474Z"
+        fill="#CBC4C4"/>
+      <path d="M24.2361 29.0854L15 15.8958V25.0098L22.936 29.182C23.3892 29.4202 23.8806 29.3457 24.2361 29.0854Z"
+            fill="#CBC4C4"/>
+      <path
+        d="M15 15.8958L6.79354 19.0474L5.27796 27.8843C5.192 28.3853 5.41102 28.8269 5.76393 29.0854L15 15.8958Z"
+        fill="#CBC4C4"/>
+      <path
+        d="M0.0566406 11.5442L14.9999 15.8958L9.92801 9.4001L1.05525 10.6895C0.54367 10.7637 0.188242 11.1191 0.0566406 11.5442Z"
+        fill="#CBC4C4"/>
+      <path
+        d="M6.79366 19.0474L0.373212 12.7891C0.0128037 12.4378 -0.071278 11.9579 0.056866 11.5442L15.0001 15.8958L6.79366 19.0474Z"
+        fill="#CBC4C4"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_1_1387">
+        <rect width="30" height="30" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+</ng-template>
