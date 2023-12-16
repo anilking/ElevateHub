@@ -3,9 +3,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {MainComponent} from "./components/main/main.component";
 import {OverviewComponent} from "./components/overview/overview.component";
-import { SupportScoreComponent } from './components/support-score/support-score.component';
-import { AssessmentPromotionComponent } from './components/assessment-promotion/assessment-promotion.component';
-import { PerformanceSummaryComponent } from './components/performance-summary/performance-summary.component';
+import {SupportScoreComponent} from './components/support-score/support-score.component';
+import {AssessmentPromotionComponent} from './components/assessment-promotion/assessment-promotion.component';
+import {PerformanceSummaryComponent} from './components/performance-summary/performance-summary.component';
+import {VelocityComponent} from "./components/velocity/velocity.component";
 
 const routes: Routes = [
   {
@@ -18,12 +19,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "overview",
+    path: "",
     component: MainComponent,
     children: [
       {
-        path: "",
+        path: "overview",
         component: OverviewComponent
+      },
+      {
+        path: "velocity",
+        component: VelocityComponent
       },
       {
         path: "support-score",

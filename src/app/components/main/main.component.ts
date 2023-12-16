@@ -17,27 +17,27 @@ export class MainComponent {
     {
       icon: "home",
       title: "Overview",
-      url: "new-url-disabled"
+      url: "overview"
     },
     {
       icon: "velocity",
       title: "Velocity",
-      url: "new-url-2",
+      url: "velocity",
     },
     {
       icon: "support_screen",
       title: "Support Score",
-      url: "new-url-5",
+      url: "support-score",
     },
     {
       icon: "assessment",
       title: "Assessment for Promotion",
-      url: "new-url-6",
+      url: "assessment-promotion",
     },
     {
       icon: "performance",
       title: "Performance Summary",
-      url: "new-url-6",
+      url: "performance-summary",
     }
   ];
 

@@ -12,7 +12,7 @@
   }
 
   &__svg {
-    height: 200px;
+    //height: 200px;
     overflow: visible;
     width: 200px;
 
@@ -27,6 +27,7 @@
 }
 
 .support-cls {
+  height: 40px;
   display: flex;
 
   .title {
@@ -38,10 +39,10 @@
   height: 280px;
   width: calc(100% - 10px);
 
-  canvas {
-    position: relative;
-    top: 10px;
-  }
+  //canvas {
+  //  position: relative;
+  //  top: 10px;
+  //}
 }
 
 .main-card-item {
@@ -49,8 +50,8 @@
   display: flex;
 
   .badges {
-    position: relative;
-    top: 30px;
+    //position: relative;
+    //top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
