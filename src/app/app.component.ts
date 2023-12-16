@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from './common-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ElevateHub';
+
+  constructor(private commonService: CommonService){
+
+  }
+
+  ngOnInit(){
+    this.commonService.getData().subscribe((data) => {
+        console.log(data)
+    });
+  }
+
 }

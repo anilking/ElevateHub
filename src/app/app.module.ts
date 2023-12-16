@@ -32,6 +32,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { FeedbackCommentsComponent } from './components/feedback-comments/feedback-comments.component';
 import { VelocityComponent } from './components/velocity/velocity.component';
 import { SupportScoreComponent } from './components/support-score/support-score.component';
+import { AssessmentPromotionComponent } from './components/assessment-promotion/assessment-promotion.component';
+import { PerformanceSummaryComponent } from './components/performance-summary/performance-summary.component';
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -57,7 +59,9 @@ const umModules: Type<any>[] = [
     TasksComponent,
     FeedbackCommentsComponent,
     VelocityComponent,
-    SupportScoreComponent
+    SupportScoreComponent,
+    AssessmentPromotionComponent,
+    PerformanceSummaryComponent
   ],
   imports: [
     BrowserModule,
