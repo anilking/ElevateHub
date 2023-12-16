@@ -1,11 +1,12 @@
 .container {
-  width: 80%;
-  margin: 50px auto;
+  height: 90vh;
+  width: 90vw;
+  margin: 10px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
   border: none;
-  border-radius: 20px;
 }
 
 h1 {
@@ -31,6 +32,9 @@ h1 {
   background-image: linear-gradient(to bottom, #868cff 10%, #4318ff 100%);
   color: white;
   font-weight: 500;
+  animation: fadeInLeft ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .header {
   display: flex;
@@ -76,6 +80,9 @@ h1 {
   background-image: linear-gradient(to bottom, #868cff 10%, #4318ff 100%);
   color: white;
   font-weight: 500;
+  animation: fadeInRight ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 ul {
   list-style: none;
@@ -91,6 +98,27 @@ li {
   width: 70%;
 }
 li:hover {
-  transform: scale(1.02);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(+50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
