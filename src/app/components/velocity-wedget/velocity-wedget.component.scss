@@ -1,68 +1,94 @@
-.main-card {
-    width: 345px;
-    height: 315px;
-    border-radius: 20px
+::ng-deep .um-pie {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  left: 40px;
+  top: 40px;
+
+  &__svg-container {
+    height: 200px;
+    width: 200px;
+  }
+
+  &__svg {
+    height: 200px;
+    overflow: visible;
+    width: 200px;
+
+    circle {
+      stroke-width: 20px;
+    }
+  }
+
+  &__label-block {
+    display: none;
+  }
 }
 
 .support-cls {
-    .title {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-    }
-    .select-field-cls {
-        float: right;
-        width: 100px;
-    }
-}
+  display: flex;
 
-.bradge-cls {
-    display: flex;
-
-    .sub-div{
-        width: 50%;
-        display: flex;
-        margin-left: 10%;
-    }
-    .dot-cls {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        margin-top: 6px;
-        margin-right: 2px;
-        margin-left: 10px;
-    }
-
-    .silver {
-        background-color: silver;
-    }
-
-    .gold {
-        background-color: gold;
-    }
-
-    .score-cls {
-        margin-left: 16%;
-    }
+  .title {
+    font-weight: 700 !important;
+  }
 }
 
 .chart-div {
-    margin-bottom: 15px;
-    
-    .current-score-div {
-        .current-score {
-            font-size: 34px;
-            margin-left: 10px;
-        }
-        .score-increment {
-            margin-left: 10px;
-        }
+  height: 280px;
+  width: calc(100% - 10px);
 
-        .current-score-cls {
-            position: absolute;
-            top: 107px;
-            left: 48px;
-        }
+  canvas {
+    position: relative;
+    top: 10px;
+  }
+}
+
+.main-card-item {
+  flex-direction: column;
+  display: flex;
+
+  .badges {
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+
+    .gold {
+      background: #7551FF;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
     }
+
+    .silver {
+      background: #5BABD5;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .sub-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      color: #A3AED0;
+    }
+
+    .score-cls-perc {
+      font-weight: 700 !important;
+      position: relative;
+      left: 8px;
+    }
+  }
+
 }
 

@@ -1,49 +1,37 @@
-<mat-card class="main-card">
-    <div class="support-cls">
-        <h3 class="title">Velocity</h3>
-        <mat-form-field class="select-field-cls">
-            <mat-select>
-              <mat-option value="Month" selected>Month</mat-option>
-              <mat-option value="Year">Year</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
+<div class="main-card-item">
+  <div class="support-cls">
+    <div class="title">Velocity</div>
+  </div>
 
-    <div class="chart-div">
-        <mat-grid-list cols="2">
-            <mat-grid-tile>
-                <div class="current-score-div">
-                    <span class="current-score">73</span> <span class="green score-increment">^ + 2.45%</span>
-                    <span class="current-score-cls">Total Velocity</span>
-
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <canvas baseChart
-                        [data]="barChartData"
-                        [options]="barChartOptions"
-                        [plugins]="barChartPlugins"
-                        [legend]="barChartLegend"
-                        [type]="'bar'">
-                </canvas>
-            </mat-grid-tile>
-        </mat-grid-list>
+  <div class="chart-div">
+    <canvas
+      width="200" height="1"
+      baseChart
+      class="chart"
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="barChartType"
+    >
+    </canvas>
+  </div>
+  <div class="badges">
+    <div class="bradge-cls gold-border">
+      <div class="sub-div">
+        <div class="gold dot-cls left"></div>
+        <span class="text">TMS</span>
+      </div>
+      <div class="sub-div">
+        <span class="score-cls-perc">750</span>
+      </div>
     </div>
-
-    <div class="bradge-cls">
-        <div class="sub-div">
-            <div class="blue dot-cls left"></div> <span>TER</span>
-        </div>
-        <div class="sub-div">
-            <div class="light-blue dot-cls right"></div> <span>LOE</span>
-        </div>
+    <div class="bradge-cls yellow">
+      <div class="sub-div score-cls">
+        <div class="silver dot-cls left"></div>
+        <span class="text">TER</span>
+      </div>
+      <div class="sub-div score-cls-perc">
+        <span>250</span>
+      </div>
     </div>
-    <div class="bradge-cls">
-        <div class="sub-div score-cls">
-            <span>75%</span>
-        </div>
-        <div class="sub-div score-cls">
-            <span>25%</span>
-        </div>
-    </div>
-</mat-card>
+  </div>
+</div>

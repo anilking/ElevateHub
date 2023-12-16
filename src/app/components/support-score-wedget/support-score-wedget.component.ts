@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ChartOptions } from 'chart.js';
+import {Component} from '@angular/core';
+import {ChartConfiguration, ChartData, ChartType} from "chart.js";
 
 @Component({
   selector: 'app-support-score-wedget',
@@ -7,16 +7,29 @@ import { ChartOptions } from 'chart.js';
   styleUrls: ['./support-score-wedget.component.scss']
 })
 export class SupportScoreWedgetComponent {
-  public pieChartOptions: ChartOptions<'pie'> = {
-    responsive: true,
+  public doughnutChartLabels: string[] = [
+    'Download Sales',
+  ];
+
+  public _current: number = 40;
+
+  public _total: number = 150;
+
+  public _label: string = "Some label";
+  public doughnutChartData: ChartData<'doughnut'> = {
+    labels: this.doughnutChartLabels,
+    datasets: [
+      {data: [350, 450]}
+    ]
   };
-  public pieChartLabels = [ 'Gold', 'Silver' ];
-  public pieChartDatasets = [ {
-    data: [ 75, 25 ],
-    backgroundColor: [ '#FFC451', '#9F9F9F'],
-    hoverBackgroundColor: [ '#FFC451', '#9F9F9F'],
-    hoverBorderColor: [ '#FFC451', '#9F9F9F'],
-  } ];
-  public pieChartLegend = true;
-  public pieChartPlugins = [];
+  public doughnutChartType: ChartType = 'doughnut';
+
+  public barChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+  };
 }

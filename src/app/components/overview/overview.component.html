@@ -1,32 +1,60 @@
+<div class="overview-dashboard">
+  <div class="first-row">
+    <um-card class="_min-padding user-info">
+      <img class="image-cls" src="assets/themes/base/images/icons/user-image.png" alt="Photo of a Shiba Inu">
+      <div class="user-details">
+        <span class="name"> {{user.name}}</span>
+        <span class="role">{{user.role}}</span>
+      </div>
 
-<mat-grid-list cols="3" class="overview">
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <img mat-card-image class="image-cls" src="assets/images/user-profile.png" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <h3> {{user.name}}</h3>
-              <p>{{user.role}}</p>
-            </mat-card-content>
-          </mat-card>
-    </mat-grid-tile>
+    </um-card>
 
-    <mat-grid-tile>
+    <um-card class="_min-padding support-score">
       <app-support-score-wedget></app-support-score-wedget>
-    </mat-grid-tile>
+    </um-card>
 
-    <mat-grid-tile>
+    <um-card class="_min-padding velocity">
       <app-velocity-wedget></app-velocity-wedget>
-    </mat-grid-tile>
-</mat-grid-list>
-  
-<mat-grid-list cols="3">
-  <mat-grid-tile>
-    <app-team-members></app-team-members>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-tasks></app-tasks>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-feedback-comments></app-feedback-comments>
-  </mat-grid-tile>
-</mat-grid-list>
+    </um-card>
+  </div>
+
+  <div class="second-row">
+    <um-card class="_min-padding team-members-info">
+      <app-team-members></app-team-members>
+    </um-card>
+
+    <um-card class="_min-padding tasks">
+      <app-tasks></app-tasks>
+    </um-card>
+
+    <um-card class="_min-padding comments">
+      <app-feedback-comments></app-feedback-comments>
+    </um-card>
+  </div>
+</div>
+<!--<mat-grid-list class="overview">-->
+<!--&lt;!&ndash;  <mat-grid-tile>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;  </mat-grid-tile>&ndash;&gt;-->
+
+<!--  <mat-grid-tile>-->
+<!--    <app-support-score-wedget></app-support-score-wedget>-->
+<!--  </mat-grid-tile>-->
+
+<!--  <mat-grid-tile>-->
+<!--    <app-velocity-wedget></app-velocity-wedget>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+
+<!--<mat-grid-list cols="3">-->
+<!--  <mat-grid-tile>-->
+<!--    <app-team-members></app-team-members>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile>-->
+<!--    <app-tasks></app-tasks>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile>-->
+<!--    <app-feedback-comments></app-feedback-comments>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
