@@ -3,6 +3,20 @@
   overflow: auto;
   padding: 10px;
 }
+.menu {
+  margin-left: -30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+.selected {
+  color: #4318ff;
+}
+.menu > li:hover {
+  font-weight: 500;
+}
 
 .first-row {
   min-height: 50%;
@@ -14,7 +28,7 @@
 
     &.support-score {
       width: 400px;
-      padding: 20px 20px
+      padding: 20px 20px;
     }
 
     &.velocity {
