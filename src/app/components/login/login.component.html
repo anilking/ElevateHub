@@ -1,63 +1,70 @@
 <div class="container">
-    <div class="fields">
-      <div class="signInForm">
-        <div>
-          <h1>Sign In</h1>
-          <p class="subText">Enter your email and password to sign in!</p>
-          <button class="googleBtn">
-            <div class="googleLogo">
-              <img
-                src="../../../assets/google-logo.png"
-                alt="google-logo"
-                width="100%"
-              />
-            </div>
-            Sign in with work email
-          </button>
-        </div>
-        <div class="seperator">
-          <div class="beforeOr"></div>
-          <div class="or">or</div>
-          <div class="afterOr"></div>
-        </div>
-        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <div class="email">
-            <label>Email*</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              style="height: 28px"
-              required
-              formControlName="email"
-              [ngClass]="{'input-error': email?.hasError('required') && (email?.touched || submitted)}"
-            />
-          </div>
-          <div class="password">
-            <label>Password*</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              style="height: 28px"
-              required
-              formControlName="password"
-              [ngClass]="{'input-error': password?.hasError('required') && (password?.touched || submitted)}"
-            />
-          </div>
-          <div class="actions">
-            <div>
-              <input type="checkbox" style="cursor: pointer" />
-              <span class="loggedIn">Keep me logged in</span>
-            </div>
-            <div class="forgetPassword">Forget password?</div>
-          </div>
-          <button type="submit" class="submitButton" [ngClass]="{'disabled': loginForm.invalid}" [disabled]="loginForm.invalid">Sign In</button>
-        </form>
+  <div class="fields">
+    <div class="signInForm">
+      <div>
+        <h1>Sign In</h1>
+        <p class="subText">Enter your email and password to sign in!</p>
       </div>
-    </div>
-    <div class="imageSection">
-      <img src="../../../assets/signup-bg.jpg" alt="signup-Image" />
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="email">
+          <label>Email<span class="ashtrek">*</span></label>
+          <input
+            type="email"
+            placeholder="Please enter your email"
+            id="email"
+            name="email"
+            style="height: 28px"
+            required
+            formControlName="email"
+            [ngClass]="{
+              'input-error':
+                email?.hasError('required') && (email?.touched || submitted)
+            }"
+          />
+        </div>
+        <div class="password">
+          <label>Password<span class="ashtrek">*</span></label>
+          <input
+            placeholder="Min. 8 Characters"
+            type="password"
+            id="password"
+            name="password"
+            style="height: 28px"
+            required
+            formControlName="password"
+            [ngClass]="{
+              'input-error':
+                password?.hasError('required') &&
+                (password?.touched || submitted)
+            }"
+          />
+        </div>
+        <div class="actions">
+          <div>
+            <input type="checkbox" style="cursor: pointer" />
+            <span class="loggedIn">Keep me logged in</span>
+          </div>
+          <div class="forgetPassword">Forget password?</div>
+        </div>
+        <button
+          type="submit"
+          class="submitButton"
+          [ngClass]="{ disabled: loginForm.invalid }"
+          [disabled]="loginForm.invalid"
+        >
+          Sign In
+        </button>
+      </form>
+      <footer class="footer">
+        &#169; 2023 NetCraker. All Rights Reserved.
+      </footer>
     </div>
   </div>
-  
+  <div class="imageSection">
+    <div class="projectName">
+      <h2>NC ElevateHub</h2>
+      <h3>Velocity Tracker</h3>
+    </div>
+    <img src="../../../assets/signup-bg.jpg" alt="signup-Image" />
+  </div>
+</div>

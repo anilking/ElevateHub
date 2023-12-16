@@ -3,6 +3,12 @@
   overflow: auto;
   padding: 10px;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0px auto;
+}
 .menu {
   margin-left: -30px;
   display: flex;
@@ -10,12 +16,24 @@
   align-items: center;
   cursor: pointer;
   list-style: none;
+  gap: 20px;
 }
-.selected {
-  color: #4318ff;
+.menu > li {
+  background-color: rgb(224, 224, 224);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 6px 12px;
 }
-.menu > li:hover {
-  font-weight: 500;
+.dropdowns {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu > .selected {
+  background-color: #4318ff;
+  color: #fff;
 }
 
 .first-row {

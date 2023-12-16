@@ -1,149 +1,183 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-  h1 {
-    color: #2b3674;
-    font-weight: 700;
-  }
-  .fields {
-    width: 100%;
-  }
-  .signInForm {
-    width: 300px;
-    margin: 0px auto;
-  }
-  .imageSection {
-    width: 100%;
-  }
-  .imageSection > img {
-    width: 100%;
-    height: 99vh;
-    border-bottom-left-radius: 56px;
-  }
-  .subText {
-    color: #a3aed0;
-    font-size: 12px;
-  }
-  .googleBtn {
-    cursor: pointer;
-    height: 40px;
-    border: none;
-    width: 100%;
-    border-radius: 15px;
-    margin: auto;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-  }
-  .googleBtn:hover,
-  .googleBtn:focus,
-  .googleBtn:active {
-    background-color: whitesmoke;
-  }
-  .googleLogo {
-    width: 16px;
-    height: 18px;
-  }
-  .seperator {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .seperator .beforeOr {
-    border: 1px solid #e0e5f2;
-    height: 0.01px;
-    width: 45%;
-  }
-  .seperator .or {
-    color: #a3aed0;
-    width: 10px;
-  }
-  .seperator .afterOr {
-    border: 1px solid #e0e5f2;
-    height: 0.01px;
-    width: 45%;
-  }
-  .form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .email {
-    display: flex;
-    flex-direction: column;
-  }
-  label {
-    color: #2b3674;
-    font-size: 12px;
-  }
-  input {
-    border: 0.5px solid #a3aed0;
-    border-radius: 6px;
-    outline: none;
-    padding-left: 10px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+h1 {
+  color: #2b3674;
+  font-weight: 700;
+}
+.fields {
+  width: 100%;
+}
+.signInForm {
+  width: 450px;
+  margin: 0px auto;
+}
+.imageSection {
+  width: 100%;
+  border-top-right-radius: 20px;
+}
+.imageSection > img {
+  width: 100%;
+  height: 100vh;
+  border-bottom-left-radius: 56px;
+}
+.subText {
+  color: #a3aed0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+.googleBtn {
+  cursor: pointer;
+  height: 40px;
+  border: none;
+  width: 100%;
+  border-radius: 15px;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+.googleBtn:hover,
+.googleBtn:focus,
+.googleBtn:active {
+  background-color: whitesmoke;
+}
+.googleLogo {
+  width: 16px;
+  height: 18px;
+}
+.seperator {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.seperator .beforeOr {
+  border: 1px solid #e0e5f2;
+  height: 0.01px;
+  width: 45%;
+}
+.seperator .or {
+  color: #a3aed0;
+  width: 10px;
+}
+.seperator .afterOr {
+  border: 1px solid #e0e5f2;
+  height: 0.01px;
+  width: 45%;
+}
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+}
+.ashtrek {
+  color: #4318ff;
+  font-size: 14px;
+  font-weight: 500;
+}
+label {
+  color: #2b3674;
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+}
+input {
+  border: 0.25px solid #a3aed0;
+  border-radius: 15px;
+  outline: none;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 14px;
+}
 
-  .input-error {
-    border: 0.5px solid red;
-  }
-  
-  .password {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-  .actions > div {
-    display: flex;
-    align-items: center;
-    gap: 2.5px;
-  }
-  .loggedIn {
-    color: #2b3674;
-    font-size: 12px;
-  }
-  .forgetPassword {
-    color: #4318ff;
-    cursor: pointer;
-    font-size: 12px;
-  }
-  .forgetPassword:hover {
-    text-decoration: underline;
-  }
-  .submitButton {
-    cursor: pointer;
-    height: 40px;
-    border: none;
-    width: 100%;
-    border-radius: 15px;
-    margin: auto;
-    outline: none;
-    background-color: #4318ff;
-    color: white;
-  }
-  
-  .submitButton:hover,
-  .submitButton:focus,
-  .submitButton:active {
-    opacity: 0.8;
-    color: white;
-  }
+.input-error {
+  border: 0.5px solid red;
+}
 
-  .form .disabled {
-    background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3)) !important;
-    color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3)) !important;
-    border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3)) !important;
-  }
-  
+.password {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.actions > div {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+}
+.loggedIn {
+  color: #2b3674;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+.forgetPassword {
+  color: #4318ff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+}
+.forgetPassword:hover {
+  text-decoration: underline;
+}
+.submitButton {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  border-radius: 15px;
+  margin: auto;
+  outline: none;
+  background-color: #4318ff;
+  color: white;
+  padding: 15px;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.submitButton:active {
+  opacity: 0.8;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 25px;
+  margin-left: 2.5%;
+  color: #a3aed0;
+  font-size: 14px;
+}
+.projectName {
+  text-align: center;
+  position: absolute;
+  top: 47%;
+  left: 71%;
+  color: #fff;
+  line-height: -1px;
+}
+.projectName h2 {
+  font-weight: 500px;
+  color: #fff;
+  margin-bottom: -6px;
+}
+.projectName h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
