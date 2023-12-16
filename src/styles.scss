@@ -23,4 +23,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: #5BABD5;
 }
 
+// .overview .mat-grid-tile-content {
+//   display: block;
+// }
+
+.support-cls {
+  .mat-mdc-text-field-wrapper{
+      background-color: transparent;
+  }
+}
 
