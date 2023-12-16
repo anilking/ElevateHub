@@ -20,25 +20,29 @@
           <div class="or">or</div>
           <div class="afterOr"></div>
         </div>
-        <form class="form">
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="email">
-            <label htmlFor="email">Email*</label>
+            <label>Email*</label>
             <input
               type="email"
               id="email"
               name="email"
               style="height: 28px"
               required
+              formControlName="email"
+              [ngClass]="{'input-error': email?.hasError('required') && (email?.touched || submitted)}"
             />
           </div>
           <div class="password">
-            <label htmlFor="password">Password*</label>
+            <label>Password*</label>
             <input
               type="password"
               id="password"
               name="password"
               style="height: 28px"
               required
+              formControlName="password"
+              [ngClass]="{'input-error': password?.hasError('required') && (password?.touched || submitted)}"
             />
           </div>
           <div class="actions">
@@ -48,7 +52,7 @@
             </div>
             <div class="forgetPassword">Forget password?</div>
           </div>
-          <button type="submit" class="submitButton">Sign In</button>
+          <button type="submit" class="submitButton" [ngClass]="{'disabled': loginForm.invalid}" [disabled]="loginForm.invalid">Sign In</button>
         </form>
       </div>
     </div>

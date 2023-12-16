@@ -1,0 +1,32 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile>
+        <app-support-score-wedget></app-support-score-wedget>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+        <mat-card class="feedback-card">
+            <mat-card-header>
+              <mat-card-title class="card-title">Feedback & Comments</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                      <mat-list-item *ngFor="let item of [1,2,3,4,5]">
+                        <mat-icon matListItemIcon>PA</mat-icon>
+                        <div class="mdc-list-item__content">
+                            <div class="mat-mdc-list-item-title mdc-list-item__primary-text width-50 comment-header">
+                                Helped me to solve NTTNBP-128123
+                            </div>
+                            <div class="mat-mdc-list-item-line mdc-list-item__secondary-text width-50 sub-comment-cls">
+                                Swamy has provided information about  UX-mask field. It helped me to solve NTTNBP-128123
+                            </div>
+                            <div class="stars-div-cls">
+                                <mat-icon aria-hidden="false" aria-label="Example star icon" fontIcon="star" *ngFor="let item of [1,2,3,4,5]"></mat-icon><br/>
+                                <span class="star-comment-cls">You have earned a Gold Badge for this</span>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                      </mat-list-item>
+                  </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
