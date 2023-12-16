@@ -5,63 +5,70 @@
     (onClick)="openForm()"
   ></ux-button>
 
-  <div class="form-container" *ngIf="_isFormVisible">
-    <div>
-      <div class="left_panel">
-        <ux-search-field
-          class="form-container__search"
-          placeholder="Search Colleague Email id"
-        >
-        </ux-search-field>
-        <div>
-          <div class="badges">
-            <ng-container *ngTemplateOutlet="noOfBadges >= 1 ? fillStarIcon : noFillStarIcon"></ng-container>
-            <ng-container *ngTemplateOutlet="noOfBadges >= 2 ? fillStarIcon : noFillStarIcon"></ng-container>
-            <ng-container *ngTemplateOutlet="noOfBadges >= 3 ? fillStarIcon : noFillStarIcon"></ng-container>
-            <ng-container *ngTemplateOutlet="noOfBadges >= 4 ? fillStarIcon : noFillStarIcon"></ng-container>
-            <ng-container *ngTemplateOutlet="noOfBadges >= 5 ? fillStarIcon : noFillStarIcon"></ng-container>
+  <div class="form-container" *ngIf="_isFormVisible" [formGroup]="supportScoreForm" >
+      <div>
+        <div class="left_panel">
+          <ux-search-field
+            class="form-container__search"
+            placeholder="Search Colleague Email id"
+            formControlName="email"
+          >
+          </ux-search-field>
+          <div>
+            <div class="badges">
+              <span (click)="selectedStar(1)"><ng-container *ngTemplateOutlet="noOfBadges >= 1 ? fillStarIcon : noFillStarIcon"></ng-container></span>
+              <span (click)="selectedStar(2)"><ng-container *ngTemplateOutlet="noOfBadges >= 2 ? fillStarIcon : noFillStarIcon"></ng-container></span>
+              <span (click)="selectedStar(3)"><ng-container *ngTemplateOutlet="noOfBadges >= 3 ? fillStarIcon : noFillStarIcon"></ng-container></span>
+              <span (click)="selectedStar(4)"><ng-container *ngTemplateOutlet="noOfBadges >= 4 ? fillStarIcon : noFillStarIcon"></ng-container></span>
+              <span (click)="selectedStar(5)"><ng-container *ngTemplateOutlet="noOfBadges >= 5 ? fillStarIcon : noFillStarIcon"></ng-container></span>
+            </div>
+            <ux-switcher-field
+              [ngStyle]="{'margin-top': '32px'}"
+              text="Gold Badge"
+              [value]="_isGoldBadge"
+              [small]="false"
+              (valueChange)="isBadgeSelected($event, 'gold')"
+            ></ux-switcher-field>
+            <ux-switcher-field
+              [ngStyle]="{'margin-top': '22px'}"
+              text="Silver Badge"
+              [small]="false"
+              [value]="_isSilverBadge"
+              (valueChange)="isBadgeSelected($event, 'silver')"
+            ></ux-switcher-field>
+
           </div>
-          <ux-switcher-field
-            [ngStyle]="{'margin-top': '32px'}"
-            text="Gold Badge"
-            [value]="_isGoldBadge"
-            [small]="false"
-          ></ux-switcher-field>
-          <ux-switcher-field
-            [ngStyle]="{'margin-top': '22px'}"
-            text="Silver Badge"
-            [small]="false"
-            [value]="_isSilverBadge"
-          ></ux-switcher-field>
         </div>
       </div>
-    </div>
-    <div class="vertical-line">
+      <div class="vertical-line">
 
-    </div>
-    <div class="support_description">
-      <ux-reference-field size="small" [value]="[_items[0]]" [items]="_items"></ux-reference-field>
-      <ux-textarea-field
-        [rows]="5"
-        label="Support Description"
-        [(value)]="_description"
-      >
-      </ux-textarea-field>
-      <div class="footer_buttons">
-        <ux-button
-          [text]="'Close'"
-          [type]="'secondary'"
-          (onClick)="_isFormVisible = !_isFormVisible"
-        >
-        </ux-button>
-        <ux-button
-          [text]="'Submit'"
-          [type]="'primary'"
-          (onClick)="onFormSubmitAction()"
-        >
-        </ux-button>
       </div>
-    </div>
+      <div class="support_description">
+        <ux-reference-field size="small" [value]="[_items[0]]" [items]="_items" mode="multiple"
+        (onValueChange)="technologiesChanges($event)"
+        ></ux-reference-field>
+        <ux-textarea-field
+          [rows]="5"
+          label="Support Description"
+          [(value)]="_description"
+          formControlName="comment"
+        >
+        </ux-textarea-field>
+        <div class="footer_buttons">
+          <ux-button
+            [text]="'Close'"
+            [type]="'secondary'"
+            (onClick)="_isFormVisible = !_isFormVisible"
+          >
+          </ux-button>
+          <ux-button
+            [text]="'Submit'"
+            [type]="'primary'"
+            (onClick)="onFormSubmitAction()"
+          >
+          </ux-button>
+        </div>
+      </div>
 
   </div>
 </div>
