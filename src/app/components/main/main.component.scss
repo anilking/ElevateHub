@@ -1,0 +1,34 @@
+.um-side-navigation-bar-showcase {
+  &__wrapper {
+    display: flex;
+    height: calc(100% - 2px);
+    border: 1px solid #EDF1F5;
+  }
+
+  &__central-content {
+    width: 100%;
+    height: 100%;
+    transition: all 800ms linear;
+    background-color: #F5F5FA;
+
+    &-title {
+      width: 100%;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+  }
+
+  .um-side-navigation-bar__text {
+    position: relative;
+    left: 10px;
+    bottom: 20px;
+  }
+}
