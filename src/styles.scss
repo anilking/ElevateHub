@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -17,11 +18,11 @@ html, body {
 }
 
 .blue {
-  background-color: #7551FF;
+  background-color: #7551ff;
 }
 
 .light-blue {
-  background-color: #5BABD5;
+  background-color: #5babd5;
 }
 
 ::-webkit-scrollbar {
@@ -51,7 +52,7 @@ a {
 
   &,
   &:visited {
-    color: #2F7CE0;
+    color: #2f7ce0;
   }
 
   &:hover,
@@ -68,10 +69,13 @@ a {
 .support-score :not(.footer_buttons) .ux-button__button {
   width: 274px;
   --ux-ng2-button-small-height: 50px;
-  border: 1px #F4F7FE;
+  border: 1px #f4f7fe;
   border-radius: 9.46px;
-  background: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
+  background: linear-gradient(to bottom, #00e7ff 10%, #0068ff 100%);
   line-height: 33px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
   // --ux-ng2-button-primary-background-color: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
 }
 
@@ -81,10 +85,10 @@ a {
 }
 
 .form-container__search .ux-search-field__input-wrapper {
-    height: 31px;
-    border-radius: 49px;
-    width: 248px;
-    background-color: #E5EDFF;
+  height: 31px;
+  border-radius: 49px;
+  width: 248px;
+  background-color: #e5edff;
 }
 
 .support_description .ux-textarea-field__input-wrapper {
@@ -103,14 +107,21 @@ a {
 .form-container .support_description .footer_buttons .ux-button__button {
   width: 153px;
   --ux-ng2-button-small-height: 50px;
-  background: #F4F7FE;
+  background: #f4f7fe;
 
-  border: 1px #F4F7FE;
+  border: 1px #f4f7fe;
   border-radius: 9.46px;
 }
 
-.form-container .support_description .footer_buttons ._primary .ux-button__button {
-  background: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
+.form-container
+  .support_description
+  .footer_buttons
+  ._primary
+  .ux-button__button {
+  background: linear-gradient(to bottom, #00e7ff 10%, #0068ff 100%);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .form-container .support_description .footer_buttons .ux-button__text {
@@ -119,7 +130,7 @@ a {
 }
 
 .form-container .ux-switcher-field__control {
-  --ux-ng2-switcher-field-active-background-color: #4318FF;
+  --ux-ng2-switcher-field-active-background-color: #0068ff;
   --ux-ng2-switcher-field-width: 36px;
   --ux-ng2-switcher-field-height: 18px;
 }
@@ -128,4 +139,3 @@ a {
   --ux-ng2-switcher-field-icon-width: 18px;
   --ux-ng2-switcher-field-icon-height: 16px;
 }
-

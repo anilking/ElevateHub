@@ -1,17 +1,15 @@
-
 .example-card {
-  padding: 10px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .title {
-  color: #2b3674;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .outline {
@@ -32,7 +30,7 @@
 .addIcon {
   width: 20px;
   text-align: center;
-  background: #4318ff;
+  background: #0068ff;
   color: white;
   border: none;
   font-weight: 500;
@@ -51,7 +49,7 @@ li {
   margin: 10px auto;
   padding: 5px;
   border-radius: 16px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 18px 40px 0px rgba(112, 144, 176, 0.12);
   height: 40px;
   display: flex;
@@ -65,7 +63,7 @@ li:hover {
 .profilePicture {
   width: 30px;
   height: 30px;
-  background-color: #5BABD5;
+  background-color: #5babd5;
   border-radius: 15px;
   display: flex;
   align-items: center;

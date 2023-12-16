@@ -36,7 +36,7 @@
 }
 
 .chart-div {
-  height: 280px;
+  height: 70vh;
   width: calc(100% - 10px);
 
   //canvas {
@@ -57,9 +57,8 @@
     align-items: center;
     gap: 100px;
 
-
     .gold {
-      background: #7551FF;
+      background: #0068ff;
       height: 10px;
       width: 10px;
       border-radius: 20px;
@@ -67,7 +66,7 @@
     }
 
     .silver {
-      background: #5BABD5;
+      background: #5babd5;
       height: 10px;
       width: 10px;
       border-radius: 20px;
@@ -81,7 +80,7 @@
     }
 
     .text {
-      color: #A3AED0;
+      color: #a3aed0;
     }
 
     .score-cls-perc {
@@ -90,6 +89,4 @@
       left: 8px;
     }
   }
-
 }
-
