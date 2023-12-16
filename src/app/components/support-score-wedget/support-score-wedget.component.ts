@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ChartConfiguration, ChartData, ChartType} from "chart.js";
+import { CommonService } from 'src/app/common-service.service';
 
 @Component({
   selector: 'app-support-score-wedget',
@@ -8,22 +9,18 @@ import {ChartConfiguration, ChartData, ChartType} from "chart.js";
 })
 export class SupportScoreWedgetComponent {
   public doughnutChartLabels: string[] = [
-    'Download Sales',
+    "Gold", "Silver"
   ];
 
-  public _current: number = 40;
+  public supportScore: any = {}
 
-  public _total: number = 150;
+  public _current!: number;
 
-  public _label: string = "Some label";
-  public doughnutChartData: ChartData<'doughnut'> = {
-    labels: this.doughnutChartLabels,
-    datasets: [
-      {data: [350, 450]}
-    ]
-  };
+  public _total: number = 100;
+
+  public _label: string = "Gold";
+  public doughnutChartData!: ChartData<'doughnut'>;
   public doughnutChartType: ChartType = 'doughnut';
-
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: {
@@ -32,4 +29,17 @@ export class SupportScoreWedgetComponent {
       }
     },
   };
+
+  constructor(private commonService: CommonService){
+
+  }
+
+  ngOnInit(){
+    this.commonService.getSupportScore().subscribe((supportScore) => {
+      this.supportScore = supportScore;
+      this._current = supportScore.gold;
+    })
+  }
+
+  
 }
