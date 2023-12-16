@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
 .mat-mdc-card {
-    background-color: #fff !important;
-  }
+  background-color: #fff !important;
+}
 
 .display-flex {
   display: flex;
@@ -17,8 +19,14 @@ html, body { height: 100%; }
 .blue {
   background-color: #7551FF;
 }
+
 .light-blue {
   background-color: #5BABD5;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
 }
 
 // .overview .mat-grid-tile-content {
@@ -26,8 +34,8 @@ html, body { height: 100%; }
 // }
 
 .support-cls {
-  .mat-mdc-text-field-wrapper{
-      background-color: transparent;
+  .mat-mdc-text-field-wrapper {
+    background-color: transparent;
   }
 }
 
