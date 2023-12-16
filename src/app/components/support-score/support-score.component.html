@@ -32,18 +32,34 @@
 </mat-grid-list> -->
 
 <div class="overview-dashboard">
-  <div class="first-row">
+    <div class="first-row">
 
-    <um-card class="_min-padding support-score">
-      <app-support-score-wedget></app-support-score-wedget>
-    </um-card>
+        <um-card class="_min-padding support-score">
+            <app-support-score-wedget></app-support-score-wedget>
+        </um-card>
 
-    <div class="form-comments-cls">
-      <app-support-score-form></app-support-score-form>
-      <um-card class="_min-padding feedback-newcard">
-        <div class="card-title">Feedback & Comments</div>
-      </um-card>
+        <div class="form-comments-cls">
+            <app-support-score-form></app-support-score-form>
+            <um-card class="_min-padding feedback-newcard">
+                <div class="card-title">Feedback & Comments</div>
+                <um-card class="_min-padding">
+                    <div class="comments-cls" *ngFor="let item of [1,2,3]">
+                        <img matListItemAvatar src="https://loremflickr.com/200/200" alt="avatar" />
+                        <div class="comments-cls-div">
+                            <h3 matListItemTitle>Helped me to solve NTTNBP-128123</h3>
+                            <p matListItemLine>
+                                <span>Swamy has provided information about UX-mask field. It helped
+                                    me to solve NTTNBP-128123</span>
+                            </p>
+                        </div>
+                        <div class="badge-cls">
+                            <mat-icon aria-hidden="false" aria-label="Example star icon" fontIcon="star"
+                                *ngFor="let item of [1,2,3,4,5]"></mat-icon><br />
+                            <span class="star-comment-cls">You have earned a Gold Badge for this</span>
+                        </div>
+                    </div>
+                </um-card>
+            </um-card>
+        </div>
     </div>
-  </div>
 </div>
-
