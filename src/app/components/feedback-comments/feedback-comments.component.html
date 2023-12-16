@@ -1,7 +1,7 @@
 <div class="feedback-comments">
   <div class="card-title">Feedback & Comments</div>
 
-  <div class="comments-cls" *ngFor="let item of [1,2,3]">
+  <div class="comments-cls" *ngFor="let comment of feedBackComments">
     <div class="comment-text">
       <div class="left">
         <div>
@@ -9,20 +9,18 @@
         </div>
         <div class="comments-cls-div">
           <div class="title">Helped me to solve NTTNBP-128123</div>
-          <div class="comment">
-            Swamy has provided information about UX-mask field. It helped
-            me to solve NTTNBP-128123
-          </div>
+          <div class="comment"> {{comment.comment}}</div>
         </div>
       </div>
       <div class="badge-cls" *ngIf="overview == 'no'">
-        <ng-container *ngFor="let item of [1,2,3]">
-          <ng-container *ngTemplateOutlet="fillStarIcon"></ng-container>
-        </ng-container>
-        <ng-container *ngFor="let item of [1,2]">
-          <ng-container *ngTemplateOutlet="noFillStarIcon"></ng-container>
-        </ng-container>
-        <div class="star-comment-cls">You have earned a <b>Gold Badge</b> for this</div>
+          <ng-container *ngFor="let item of comment.fillStars">
+            <ng-container *ngTemplateOutlet="fillStarIcon"></ng-container>
+          </ng-container>
+          <ng-container *ngFor="let item of comment.emptyStars">
+            <ng-container *ngTemplateOutlet="noFillStarIcon"></ng-container>
+          </ng-container>
+        <div class="star-comment-cls">You have earned a <b *ngIf="comment.brageId === 1">Gold Badge</b>
+          <b *ngIf="comment.brageId === 2">Silver Badge</b> for this</div>
       </div>
     </div>
   </div>

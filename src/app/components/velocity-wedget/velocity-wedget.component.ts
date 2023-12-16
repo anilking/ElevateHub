@@ -53,26 +53,6 @@ export class VelocityWedgetComponent {
   };
   public barChartType: ChartType = 'bar';
 
-  //   public barChartData: ChartData<'bar'> = {
-  //     labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
-  //     datasets: [
-  //       {
-  //         data: [65, 59, 80, 81, 56, 55, 40],
-  //         label: 'TMS',
-  //         barPercentage: 0.5,
-  //         borderRadius: 20,
-  //         backgroundColor: '#7551FF',
-  //       },
-  //       {
-  //         data: [28, 48, 40, 19, 86, 27, 90],
-  //         label: 'TER',
-  //         borderRadius: 20,
-  //         barPercentage: 0.5,
-  //         backgroundColor: '#5BABD5',
-  //       },
-  //     ],
-  //   };
-
   public barChartDataForCurrentMonth: ChartData<'bar'> = {
     labels: ['05', '10', '15', '20', '25', '30'],
     datasets: [
