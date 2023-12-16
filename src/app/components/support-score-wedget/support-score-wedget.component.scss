@@ -1,71 +1,105 @@
-.main-card {
-    width: 387px;
-    height: 345px;
-    border-radius: 20px
+::ng-deep .um-pie {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  left: 40px;
+  top: 40px;
+
+  &__svg-container {
+    height: 200px;
+    width: 200px;
+  }
+
+  &__svg {
+    height: 200px;
+    overflow: visible;
+    width: 200px;
+
+    circle {
+      stroke-width: 20px;
+    }
+  }
+
+  &__label-block {
+    display: none;
+  }
 }
 
 .support-cls {
-    .title {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-    }
-    .select-field-cls {
-        float: right;
-        width: 100px;
-    }
-    .mat-mdc-text-field-wrapper{
-        background-color: transparent;
-    }
-}
+  display: flex;
 
-.bradge-cls {
-    display: flex;
-
-    .sub-div{
-        width: 50%;
-        display: flex;
-        margin-left: 10%;
-    }
-    .dot-cls {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        margin-top: 6px;
-        margin-right: 2px;
-        margin-left: 10px;
-    }
-
-    .silver {
-        background-color: silver;
-    }
-
-    .gold {
-        background-color: gold;
-    }
-
-    .score-cls {
-        margin-left: 16%;
-    }
+  .title {
+    font-weight: 700 !important;
+  }
 }
 
 .chart-div {
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
 
-    .current-score-div {
-        .current-score {
-            font-size: 34px;
-            margin-left: 10px;
-        }
-        .score-increment {
-            margin-left: 10px;
-        }
+  .current-score-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
 
-        .current-score-cls {
-            position: absolute;
-            top: 107px;
-            left: 48px;
-        }
+    .current-score {
+      font-weight: 700 !important;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
+
+    .current-score-cls {
+      color: #A3AED0;
+    }
+  }
+}
+
+.main-card-item {
+  flex-direction: column;
+  display: flex;
+
+  .badges {
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: space-around;
+
+
+    .gold {
+      background: #FFC451;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .silver {
+      background: #9F9F9F;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .sub-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      color: #A3AED0;
+    }
+
+    .score-cls-perc {
+      font-weight: 700 !important;
+      position: relative;
+      left: 8px;
+    }
+  }
+
 }
 

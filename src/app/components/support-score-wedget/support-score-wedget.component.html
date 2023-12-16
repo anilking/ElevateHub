@@ -1,47 +1,37 @@
-<mat-card class="main-card">
-    <div class="support-cls">
-        <h3 class="title">Support Score</h3>
-        <mat-form-field class="select-field-cls">
-            <mat-select>
-              <mat-option value="Month" selected>Month</mat-option>
-              <mat-option value="Year">Year</mat-option>
-            </mat-select>
-        </mat-form-field>
+<div class="main-card-item">
+  <div class="support-cls">
+    <div class="title">Support Score</div>
+  </div>
+  <div class="chart-div">
+    <div class="current-score-div">
+      <span class="current-score">4.5</span>
+      <span class="current-score-cls">Current Score</span>
     </div>
-    <div class="chart-div">
-        <mat-grid-list cols="2">
-            <mat-grid-tile>
-                <div class="current-score-div">
-                    <span class="current-score">4.5</span> <span class="green score-increment">^ + 2.45%</span>
-                    <span class="current-score-cls">Current Score</span>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <canvas baseChart
-                    [type]="'pie'"
-                    [datasets]="pieChartDatasets"
-                    [labels]="pieChartLabels"
-                    [options]="pieChartOptions"
-                    [plugins]="pieChartPlugins"
-                    [legend]="pieChartLegend">
-                </canvas>
-            </mat-grid-tile>
-        </mat-grid-list>
+    <um-pie [current]="_current"
+            [total]="_total"
+            [customIconTemplateKey]="_total < _current ? 'warning' : 'done'"
+            [class._red]="_total < _current || _current === 0"
+            [label]="(_current == 0 ? 'I\'m empty!' : _label) || 'With label'">
+    </um-pie>
+  </div>
+  <div class="badges">
+    <div class="bradge-cls gold-border">
+      <div class="sub-div">
+        <div class="gold dot-cls left"></div>
+        <span class="text">Gold</span>
+      </div>
+      <div class="sub-div">
+        <span class="score-cls-perc">75%</span>
+      </div>
     </div>
-    <div class="bradge-cls">
-        <div class="sub-div">
-            <div class="gold dot-cls left"></div> <span>Gold</span>
-        </div>
-        <div class="sub-div">
-            <div class="silver dot-cls right"></div> <span>Silver</span>
-        </div>
+    <div class="bradge-cls yellow">
+      <div class="sub-div score-cls">
+        <div class="silver dot-cls left"></div>
+        <span class="text">Silver</span>
+      </div>
+      <div class="sub-div score-cls-perc">
+        <span>25%</span>
+      </div>
     </div>
-    <div class="bradge-cls">
-        <div class="sub-div score-cls">
-            <span>75%</span>
-        </div>
-        <div class="sub-div score-cls">
-            <span>25%</span>
-        </div>
-    </div>
-</mat-card>
+  </div>
+</div>
