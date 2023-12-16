@@ -14,6 +14,20 @@ h1 {
 .progressImg {
   width: 50%;
   margin: auto;
+  animation: fadeInDown ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .action {
   background-color: #868cff;
