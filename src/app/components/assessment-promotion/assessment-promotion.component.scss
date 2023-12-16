@@ -27,14 +27,10 @@ h1 {
   border-right: 1px solid #a3aed0;
 }
 .offered > ul > li {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-color: #868cff;
+  background-image: linear-gradient(to bottom, #868cff 10%, #4318ff 100%);
   color: white;
+  font-weight: 500;
 }
 .header {
   display: flex;
@@ -76,13 +72,8 @@ h1 {
   flex: 1;
 }
 .required > ul > li {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-color: #868cff;
+  background-image: linear-gradient(to bottom, #868cff 10%, #4318ff 100%);
   color: white;
   font-weight: 500;
 }
