@@ -57,3 +57,26 @@
         display: inline-block;
     }
 }
+
+.support-score-main {
+    .first-row {
+        display: flex;
+
+        &.support-score {
+            width: 400px;
+            padding: 20px 20px
+        }
+    }
+}
+
+.form-comments-cls {
+    margin-left: 20px;
+    
+    .feedback-newcard{
+        width: 60%;
+        margin-top: 10px;
+    }
+}
+
+
+
