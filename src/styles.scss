@@ -65,3 +65,67 @@ a {
   width: 50%;
 }
 
+.support-score :not(.footer_buttons) .ux-button__button {
+  width: 274px;
+  --ux-ng2-button-small-height: 50px;
+  border: 1px #F4F7FE;
+  border-radius: 9.46px;
+  background: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
+  line-height: 33px;
+  // --ux-ng2-button-primary-background-color: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
+}
+
+.support-score :not(.footer_buttons) .ux-button__button .ux-button__text {
+  line-height: 34px;
+  font-weight: 700;
+}
+
+.form-container__search .ux-search-field__input-wrapper {
+    height: 31px;
+    border-radius: 49px;
+    width: 248px;
+    background-color: #E5EDFF;
+}
+
+.support_description .ux-textarea-field__input-wrapper {
+  width: 680px;
+  height: 119px;
+  border-radius: 11px;
+  background: #E5EDFF;
+  padding: 5px 0 0 19;
+}
+
+.support_description .ux-textarea-field__input-wrapper .ux-label__caption {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.form-container .support_description .footer_buttons .ux-button__button {
+  width: 153px;
+  --ux-ng2-button-small-height: 50px;
+  background: #F4F7FE;
+
+  border: 1px #F4F7FE;
+  border-radius: 9.46px;
+}
+
+.form-container .support_description .footer_buttons ._primary .ux-button__button {
+  background: linear-gradient(to bottom, #868CFF 10%, #4318FF 100%);
+}
+
+.form-container .support_description .footer_buttons .ux-button__text {
+  line-height: 32.43px;
+  font-weight: 700;
+}
+
+.form-container .ux-switcher-field__control {
+  --ux-ng2-switcher-field-active-background-color: #4318FF;
+  --ux-ng2-switcher-field-width: 36px;
+  --ux-ng2-switcher-field-height: 18px;
+}
+
+.form-container .ux-switcher-field__icon {
+  --ux-ng2-switcher-field-icon-width: 18px;
+  --ux-ng2-switcher-field-icon-height: 16px;
+}
+
