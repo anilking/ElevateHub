@@ -1,0 +1,25 @@
+.overview-dashboard {
+  height: calc(100% - 20px);
+  overflow: auto;
+  padding: 10px;
+}
+
+.first-row {
+  min-height: 50%;
+  display: flex;
+
+  .um-card {
+    background-color: white;
+    margin: 10px;
+
+    &.support-score {
+      width: 400px;
+      padding: 20px 20px
+    }
+
+    &.velocity {
+      width: calc(100% - 400px);
+      padding: 20px 20px;
+    }
+  }
+}
