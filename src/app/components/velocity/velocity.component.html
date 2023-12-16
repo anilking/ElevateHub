@@ -1,14 +1,55 @@
 <div class="overview-dashboard">
+  <ul class="menu">
+    <li
+      class="menu-item"
+      [ngClass]="{ selected: selectedMenuItem === 'currentMonth' }"
+      (click)="handleClick('currentMonth')"
+    >
+      Current Month
+    </li>
+    <li
+      class="menu-item"
+      [ngClass]="{ selected: selectedMenuItem === 'previousMonth' }"
+      (click)="handleClick('previousMonth')"
+    >
+      Previous Month
+    </li>
+    <li
+      class="menu-item"
+      [ngClass]="{ selected: selectedMenuItem === 'currentYear' }"
+      (click)="handleClick('currentYear')"
+    >
+      Current Year
+    </li>
+    <li class="menu-item">
+      <ux-reference-field
+        size="small"
+        [items]="_items"
+        mode="multiple"
+        label="Project"
+        (onValueChange)="handleProjectChange(_items[0])"
+      ></ux-reference-field>
+    </li>
+    <li class="menu-item">
+      <ux-reference-field
+        size="small"
+        [items]="_empitems"
+        mode="multiple"
+        label="Employee"
+        (onValueChange)="handleEmpChange(_empitems[0])"
+      ></ux-reference-field>
+    </li>
+  </ul>
+
   <div class="first-row">
-
-
     <um-card class="_min-padding velocity">
-      <app-velocity-wedget></app-velocity-wedget>
+      <app-velocity-wedget
+        [selectedType]="selectedMenuItem"
+      ></app-velocity-wedget>
     </um-card>
 
     <um-card class="_min-padding support-score">
       <app-velocity-summary-wedget></app-velocity-summary-wedget>
     </um-card>
-
   </div>
 </div>
