@@ -1,0 +1,105 @@
+::ng-deep .um-pie {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  left: 40px;
+  top: 40px;
+
+  &__svg-container {
+    height: 200px;
+    width: 200px;
+  }
+
+  &__svg {
+    height: 200px;
+    overflow: visible;
+    width: 200px;
+
+    circle {
+      stroke-width: 20px;
+    }
+  }
+
+  &__label-block {
+    display: none;
+  }
+}
+
+.support-cls {
+  display: flex;
+
+  .title {
+    font-weight: 700 !important;
+  }
+}
+
+.chart-div {
+  display: flex;
+  align-items: center;
+
+  .current-score-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
+
+    .current-score {
+      font-weight: 700 !important;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .current-score-cls {
+      color: #A3AED0;
+    }
+  }
+}
+
+.main-card-item {
+  flex-direction: column;
+  display: flex;
+
+  .badges {
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: space-around;
+
+
+    .gold {
+      background: #FFC451;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .silver {
+      background: #9F9F9F;
+      height: 10px;
+      width: 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .sub-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      color: #A3AED0;
+    }
+
+    .score-cls-perc {
+      font-weight: 700 !important;
+      position: relative;
+      left: 8px;
+    }
+  }
+
+}
+

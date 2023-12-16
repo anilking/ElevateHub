@@ -1,68 +1,73 @@
-.example-card {
-  width: 300px;
-  height: 300px;
-  border-radius: 20px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 20px;
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-}
+::ng-deep .form-comments-cls {
+  width: calc(100% - 350px);
+  margin: 0px 10px;
 
-.title {
-  color: #2b3674;
-  font-weight: 700;
-  font-size: 18px;
-}
+  .left {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
 
-.outline {
-  width: 35px;
-  height: 35px;
-  border-radius: 10px;
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.outline:hover {
-  opacity: 0.9;
-}
+  .card-title {
+    font-weight: 700;
+    padding: 10px 0px;
+  }
 
-.addIcon {
-  width: 20px;
-  text-align: center;
-  background: #fff;
-  color: gray;
-  border: none;
-  font-weight: 500;
-  border-radius: 50%;
-}
+  .feedback-comments {
+    margin: 10px 0px;
+    border-radius: 20px;
+    background: #FFF;
+    padding: 20px;
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.content .title {
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-}
-.content .description {
-  font-size: 12px;
-  color: #a3aed0;
-}
-.content .title .edit {
-  font-size: 10px;
-  color: #a3aed0;
-  font-weight: 400;
-  margin-left: 30px;
-  cursor: pointer;
-}
-.edit:hover {
-  text-decoration: underline;
+    .profilePicture {
+      width: 40px;
+      height: 40px;
+      background-color: #5BABD5;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+
+    .badge-cls {
+      svg {
+        margin-left: 2px;
+      }
+    }
+
+    .comments-cls {
+      border-bottom: 1px solid rgba(27, 37, 89, 0.1098039216);
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+
+    .comment-text {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .comments-cls-div {
+      .title {
+        font-weight: 500;
+
+      }
+
+      .comment {
+        color: #7D86A1;
+        line-height: 26px; /* 162.5% */
+        letter-spacing: -0.32px;
+      }
+
+    }
+
+    .star-comment-cls {
+      color: #7D86A1;
+      line-height: 26px;
+      font-size: 12px;
+    }
+  }
 }
