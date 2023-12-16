@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {MainComponent} from "./components/main/main.component";
 import {OverviewComponent} from "./components/overview/overview.component";
+import { SupportScoreComponent } from './components/support-score/support-score.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: "",
         component: OverviewComponent
+      },
+      {
+        path: "support-score",
+        component: SupportScoreComponent
       }
     ]
   },

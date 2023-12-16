@@ -11,6 +11,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { TeamMembersComponent } from './components/team-members/team-members.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { FeedbackCommentsComponent } from './components/feedback-comments/feedback-comments.component';
+import { VelocityComponent } from './components/velocity/velocity.component';
+import { SupportScoreComponent } from './components/support-score/support-score.component';
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -52,7 +55,9 @@ const umModules: Type<any>[] = [
     VelocityWedgetComponent,
     TeamMembersComponent,
     TasksComponent,
-    FeedbackCommentsComponent
+    FeedbackCommentsComponent,
+    VelocityComponent,
+    SupportScoreComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,8 @@ const umModules: Type<any>[] = [
     UxButtonModule,
     MatCardModule, MatButtonModule, MatGridListModule, MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule,
     ...umModules,
-    NgChartsModule
+    NgChartsModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
