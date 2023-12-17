@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {UxReferenceSelectorItem} from "@netcracker/ux-ng2/reference-field";
 import { CommonService } from 'src/app/common-service.service';
@@ -9,6 +9,8 @@ import { CommonService } from 'src/app/common-service.service';
   styleUrls: ['./support-score-form.component.scss']
 })
 export class SupportScoreFormComponent {
+
+  @Output() updated = new EventEmitter<any>();
 
   public noOfBadges: number = 0;
 
@@ -26,6 +28,13 @@ export class SupportScoreFormComponent {
     {id: '3', text: 'React'},
     {id: '5', text: 'Python'},
   ];
+
+  public items =[
+    {id: 'paswo323', text: 'Swamy'},
+    {id: '2', text: 'Angular'},
+    {id: '3', text: 'React'},
+    {id: '5', text: 'Python'},
+  ]
   supportScoreForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private commonService: CommonService){
@@ -34,7 +43,7 @@ export class SupportScoreFormComponent {
       rating: ['', Validators.required],
       email: ['', Validators.required],
       comment: ['', Validators.required],
-      brageId: ['', Validators.required]
+      badgeId: ['', Validators.required]
     });
   }
 
@@ -47,8 +56,10 @@ export class SupportScoreFormComponent {
   public isBadgeSelected(event: any, key: string): void {
     if(key === 'gold' && event) {
       this._isSilverBadge = false;
-    } 
+      this._isGoldBadge = true;
+    }
     if(key === 'silver' && event) {
+      this._isSilverBadge = true;
       this._isGoldBadge = false;
     }
   }
@@ -58,8 +69,19 @@ export class SupportScoreFormComponent {
   }
 
   onFormSubmitAction(): void {
+    if(this._isGoldBadge){
+      this.supportScoreForm.controls["badgeId"].setValue(1)
+    }else{
+      this.supportScoreForm.controls["badgeId"].setValue(2)
+    }
     this.supportScoreForm.controls["rating"].setValue(this.noOfBadges)
-    console.log(this.supportScoreForm.value)
+    const payload = {
+      ...this.supportScoreForm.value,
+      employeeId: JSON.parse(localStorage.getItem("UserDetails") || '{}').employeeId
+    }
+    this.commonService.submitSupportScore(payload).subscribe((score) =>{
+      this.commonService.openSnackBar('Your score has been submitted successfully');  
+    })
   }
 
   selectedStar(starsCount: number): void {

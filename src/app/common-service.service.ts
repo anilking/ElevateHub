@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
-import { Observable, of } from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class CommonService {
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+
+  public  updateScore: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
 
@@ -30,6 +33,13 @@ export class CommonService {
   checkLogin(userCredential: any): Observable<any> {
     const url = `${this.apiUrl}/users/authenticate`;
     return this.http.post<any>(url, userCredential);
+  }
+
+
+  submitSupportScore(data:any): Observable<any> {
+    const url = `${this.apiUrl}/supportscore`;
+    //return this.http.get<any>(url);
+    return this.http.post<any>(url, data);
   }
 
   getSupportScore(): Observable<any> {

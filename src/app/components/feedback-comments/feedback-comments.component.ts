@@ -19,6 +19,11 @@ constructor(private commonService: CommonService, private dataService: DataServi
 }
 
 ngOnInit(): void {
+
+  this.commonService.updateScore.subscribe((score) =>{
+    score && this.feedBackComments.unshift(score);
+  });
+
   this.getFeedbackComments();
 }
 
