@@ -55,7 +55,7 @@ export class SupportScoreWedgetComponent {
             return result;
         },0);
         this.supportScore.currentScore = (totalRating/(this._total * supportScore.data.length)) * 5;
-        this.supportScore.currentScore = this.supportScore.currentScore.toFixed(2);
+        this.supportScore.currentScore = this.supportScore.currentScore.toFixed(1);
         const groupedData: any = _.groupBy(supportScore?.data, 'badgeId') || [];
           const goldRating = groupedData[1]?.reduce((result: number, item: any) =>{
               result += item.rating;

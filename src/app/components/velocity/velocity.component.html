@@ -3,41 +3,42 @@
     <ul class="menu">
       <li
         class="menu-item"
-        [ngClass]="{ selected: selectedMenuItem === 'currentMonth' }"
-        (click)="handleClick('currentMonth')"
+        [ngClass]="{ selected: selectedMenuItem === 'last15Days' }"
+        (click)="handleClick('last15Days')"
       >
-        Current Month
+        Last 15 days
       </li>
       <li
         class="menu-item"
-        [ngClass]="{ selected: selectedMenuItem === 'previousMonth' }"
-        (click)="handleClick('previousMonth')"
+        [ngClass]="{ selected: selectedMenuItem === 'last30Days' }"
+        (click)="handleClick('last30Days')"
       >
-        Previous Month
+        Last 30 Days
       </li>
       <li
         class="menu-item"
-        [ngClass]="{ selected: selectedMenuItem === 'currentYear' }"
-        (click)="handleClick('currentYear')"
+        [ngClass]="{ selected: selectedMenuItem === 'last2Months' }"
+        (click)="handleClick('last2Months')"
       >
-        Current Year
+        Last 2 Months
       </li>
     </ul>
+    <!-- <ul class="dropdowns" *ngIf="user.roles === 'MGR'"> -->
     <ul class="dropdowns">
       <li class="project-item">
-        <ux-dropdown-field
+        <ux-reference-field
           size="small"
-          [items]="_items"
+          [items]="projectsList"
           label="Project"
-          (onValueChange)="handleProjectChange(_items[0])"
-        ></ux-dropdown-field>
+          (onValueChange)="handleProjectChange(projectsList[0])"
+        ></ux-reference-field>
       </li>
       <li class="employee-item">
         <ux-reference-field
           size="small"
-          [items]="_empitems"
+          [items]="usersList"
           label="Employee"
-          (onValueChange)="handleEmpChange(_empitems[0])"
+          (onValueChange)="handleEmpChange(usersList[0])"
         ></ux-reference-field>
       </li>
     </ul>
@@ -50,7 +51,7 @@
     </um-card>
 
     <um-card class="_min-padding support-score">
-      <app-velocity-summary-wedget></app-velocity-summary-wedget>
+      <app-velocity-summary-wedget [selectedType]="selectedMenuItem"></app-velocity-summary-wedget>
     </um-card>
   </div>
 </div>

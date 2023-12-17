@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UxReferenceSelectorItem } from '@netcracker/ux-ng2/reference-field';
+import { CommonService } from 'src/app/common-service.service';
+import { DataService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-velocity',
@@ -7,19 +9,14 @@ import { UxReferenceSelectorItem } from '@netcracker/ux-ng2/reference-field';
   styleUrls: ['./velocity.component.scss'],
 })
 export class VelocityComponent {
-  selectedMenuItem: string = 'currentMonth';
-  public _items: UxReferenceSelectorItem[] = [
-    { id: '1', text: 'Project1' },
-    { id: '2', text: 'Project2' },
-    { id: '3', text: 'Project3' },
-    { id: '4', text: 'Project4' },
-  ];
+  selectedMenuItem: string = 'last15Days';
+  public usersList: UxReferenceSelectorItem[] = [];
 
-  public _empitems: UxReferenceSelectorItem[] = [
-    { id: '1', text: 'Naveen Kumar' },
-    { id: '2', text: 'Anil Kumar' },
-    { id: '3', text: 'Swamy Rao' },
-    { id: '4', text: 'Hari Krishna' },
+  public projectsList: UxReferenceSelectorItem[] = [
+    { id: '1', text: 'CLOUDJPG' },
+    { id: '2', text: 'VO MS' },
+    { id: '3', text: 'CLOUDSCT' },
+    { id: '4', text: 'NTT UI' },
   ];
 
   public handleClick(type: string) {
@@ -30,5 +27,27 @@ export class VelocityComponent {
   }
   public handleEmpChange(value: any) {
     console.log(value);
+  }
+
+  user: any = {};
+
+  constructor(private dataService: DataService, private commonService: CommonService) {
+
+  }
+
+  ngOnInit(): void {
+    this.getUserList();
+    this.dataService.userDetails$.subscribe(userDetails => {
+      this.user = userDetails;
+    })
+  }
+
+  getUserList(){
+    debugger
+    this.commonService.getUsersList().subscribe(userList => {
+      userList?.data?.map((user: any) => {
+        this.usersList.push({ id: user.id, text: user.name })
+      })
+    })
   }
 }

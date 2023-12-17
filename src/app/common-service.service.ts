@@ -44,29 +44,12 @@ export class CommonService {
 
   getSupportScore(): Observable<any> {
     const url = `${this.apiUrl}/supportscore`;
-    //return this.http.get<any>(url);
     return this.http.get<any>(url);
   }
 
   getFeedbackComments(userEmail: string): Observable<any> {
     const url = `${this.apiUrl}/supportscore/${userEmail}`;
     return this.http.get<any>(url);
-  //   return of({
-  //     "status": "success",
-  //     "data": [{
-  //         "id": 1,
-  //         "employeeId": "prgu0921",
-  //         "email": "p@p.com",
-  //         "technologies": "Java",
-  //         "comment": "helped me o solve",
-  //         "rating": 5,
-  //         "modifiedAt": "2023-12-17T04:25:12Z",
-  //         "createdAt": "2023-11-17T04:24:41Z",
-  //         "nominatedUser": null,
-  //         "badgeId": 1
-  //     }],
-  //     "responseTimestamp": "2023-12-17T02:50:38.776+00:00"
-  // })
   }
 
   getVelocityScore(): Observable<any> {
@@ -81,7 +64,14 @@ export class CommonService {
   }
 
   getVelocityBarDetails(requestObj: any): Observable<any> {
-    const url = `${this.apiUrl}/users/velocity?duration=last2Months`;
+    let url = `${this.apiUrl}/users/velocity?duration=${requestObj.duration}`;
+    if(requestObj.employeeId) {
+      url = '${url}&employeeId=${requestObj.employeeId}'
+    }
+    if(requestObj.projectCode) {
+      url = '${url}&projectCode=${requestObj.projectCode}'
+    }
+
     return this.http.get<any>(url);
     // return of(
     //   {
@@ -139,6 +129,11 @@ export class CommonService {
       verticalPosition: this.verticalPosition,
       duration: 3000
     });
+  }
+
+  getUsersList(): Observable<any> {
+    const url = `${this.apiUrl}/users`;
+    return this.http.get<any>(url);
   }
 
 }
