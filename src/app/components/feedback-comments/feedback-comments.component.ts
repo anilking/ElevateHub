@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { CommonService } from 'src/app/common-service.service';
+import { DataService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-feedback-comments',
@@ -13,7 +14,7 @@ export class FeedbackCommentsComponent {
   @Input()
   overview: string = "no";
 
-constructor(private commonService: CommonService){
+constructor(private commonService: CommonService, private dataService: DataService){
 
 }
 
@@ -22,12 +23,18 @@ ngOnInit(): void {
 }
 
 getFeedbackComments(): void {
-  this.commonService.getFeedbackComments().subscribe( (feedBackComments) => {
-    this.feedBackComments = feedBackComments;
-    this.feedBackComments.map(comment => {
-      comment.fillStars = Array.apply(null, Array(comment.rating));
-      comment.emptyStars = comment.rating !== 5 ? Array.apply(null, Array(5 - comment.rating)) : [];
-    })
+  let userEmail: string = "";
+  this.dataService.userDetails$.subscribe((userDetails: any) => {
+    userEmail = userDetails.email;
+  })
+  this.commonService.getFeedbackComments(userEmail).subscribe( (feedBackComments) => {
+    if(feedBackComments.status === "success") {
+      this.feedBackComments = feedBackComments.data || [];
+      this.feedBackComments.map(comment => {
+        comment.fillStars = Array.apply(null, Array(comment.rating));
+        comment.emptyStars = comment.rating !== 5 ? Array.apply(null, Array(5 - comment.rating)) : [];
+      })
+    }
   })
 }
 

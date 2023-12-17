@@ -41,7 +41,7 @@ export class VelocitySummaryWedget {
   }
 
   ngOnInit(){
-    this.commonService.getVelocityDetails().subscribe((velocityDetails) => {
+    this.commonService.getVelocityScore().subscribe((velocityDetails) => {
       this.velocityDetails = velocityDetails;
       this._current = velocityDetails.TER;
     })

@@ -24,7 +24,7 @@ import {SupportScoreWedgetComponent} from './components/support-score-wedget/sup
 import {VelocityWedgetComponent} from './components/velocity-wedget/velocity-wedget.component';
 import {UxButtonModule} from "@netcracker/ux-ng2/button";
 import {MatIconModule} from "@angular/material/icon";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {UmNavigationBarModule} from "@netcracker/um-ng2/services/navigation-bar";
 import {NgChartsModule} from 'ng2-charts';
 import {TeamMembersComponent} from './components/team-members/team-members.component';
@@ -45,6 +45,8 @@ import {UxTooltipModule} from "@netcracker/ux-ng2/tooltip";
 import {UxSwitcherFieldModule} from "@netcracker/ux-ng2/switcher-field";
 import {UxReferenceFieldModule} from "@netcracker/ux-ng2/reference-field";
 import {VelocitySummaryWedget} from "./components/velocity-summary-wedget/velocity-summary-wedget";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthInterceptor } from './auth.interceptor';
 
 // const uxModules: Type<any>[] = [
 //   UxOverlayModule,
@@ -99,9 +101,16 @@ const umModules: Type<any>[] = [
     UxLoaderModule,
     UxTextAreaFieldModule,
     UxTooltipModule,
-    UxSwitcherFieldModule
+    UxSwitcherFieldModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

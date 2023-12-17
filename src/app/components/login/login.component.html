@@ -15,10 +15,10 @@
             name="email"
             style="height: 28px"
             required
-            formControlName="email"
+            formControlName="username"
             [ngClass]="{
               'input-error':
-                email?.hasError('required') && (email?.touched || submitted)
+              username?.hasError('required') && (username?.touched || submitted)
             }"
           />
         </div>

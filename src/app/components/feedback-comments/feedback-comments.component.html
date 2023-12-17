@@ -8,7 +8,7 @@
           <img class="profilePicture" src="assets/themes/base/images/icons/user.png">
         </div>
         <div class="comments-cls-div">
-          <div class="title">Helped me to solve NTTNBP-128123</div>
+          <div class="title">Technologies: {{comment.technologies}}</div>
           <div class="comment"> {{comment.comment}}</div>
         </div>
       </div>
@@ -19,8 +19,8 @@
           <ng-container *ngFor="let item of comment.emptyStars">
             <ng-container *ngTemplateOutlet="noFillStarIcon"></ng-container>
           </ng-container>
-        <div class="star-comment-cls">You have earned a <b *ngIf="comment.brageId === 1">Gold Badge</b>
-          <b *ngIf="comment.brageId === 2">Silver Badge</b> for this</div>
+        <div class="star-comment-cls">You have earned a <b *ngIf="comment.badgeId === 1">Gold Badge</b>
+          <b *ngIf="comment.badgeId === 2">Silver Badge</b> for this</div>
       </div>
     </div>
   </div>

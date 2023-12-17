@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { CommonService } from 'src/app/common-service.service';
 
 @Component({
   selector: 'app-velocity-wedget',
@@ -11,24 +12,6 @@ export class VelocityWedgetComponent {
   public selectedType: string = 'currentMonth';
 
   public _barChartData: any;
-
-  public ngOnChanges(change: SimpleChanges): void {
-    if (change['selectedType']) {
-      if (change['selectedType'].currentValue === 'currentMonth') {
-        this._barChartData = { ...this.barChartDataForCurrentMonth };
-      }
-      if (change['selectedType'].currentValue === 'previousMonth') {
-        this._barChartData = { ...this.barChartDataForPrevioustMonth };
-      }
-      if (change['selectedType'].currentValue === 'currentYear') {
-        this._barChartData = { ...this.barChartDataForCurrentYear };
-      }
-    }
-  }
-
-  public ngOnInit(): void {
-    this._barChartData = { ...this.barChartDataForCurrentMonth };
-  }
 
   public barChartOptions: ChartConfiguration['options'] = {
     maintainAspectRatio: false,
@@ -53,63 +36,55 @@ export class VelocityWedgetComponent {
   };
   public barChartType: ChartType = 'bar';
 
-  public barChartDataForCurrentMonth: ChartData<'bar'> = {
-    labels: ['05', '10', '15', '20', '25', '30'],
-    datasets: [
-      {
-        data: [81, 56, 65, 59, 80, 55, 40],
-        label: 'TMS',
-        barPercentage: 0.5,
-        borderRadius: 20,
-        backgroundColor: '#7551FF',
-      },
-      {
-        data: [48, 86, 27, 28, 90, 40, 19],
-        label: 'TER',
-        borderRadius: 20,
-        barPercentage: 0.5,
-        backgroundColor: '#5BABD5',
-      },
-    ],
-  };
+  public velocityDetails: any;
 
-  public barChartDataForPrevioustMonth: ChartData<'bar'> = {
-    labels: ['05', '10', '15', '20', '25', '30'],
-    datasets: [
-      {
-        data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'TMS',
-        barPercentage: 0.5,
-        borderRadius: 20,
-        backgroundColor: '#7551FF',
-      },
-      {
-        data: [28, 48, 86, 27, 90, 40, 19],
-        label: 'TER',
-        borderRadius: 20,
-        barPercentage: 0.5,
-        backgroundColor: '#5BABD5',
-      },
-    ],
-  };
+  constructor(private commonService: CommonService){
 
-  public barChartDataForCurrentYear: ChartData<'bar'> = {
-    labels: ['05', '10', '15', '20', '25', '30'],
-    datasets: [
-      {
-        data: [31, 56, 65, 59, 80, 55, 40],
-        label: 'TMS',
-        barPercentage: 0.5,
-        borderRadius: 20,
-        backgroundColor: '#7551FF',
-      },
-      {
-        data: [37, 90, 28, 48, 86, 40, 19],
-        label: 'TER',
-        borderRadius: 20,
-        barPercentage: 0.5,
-        backgroundColor: '#5BABD5',
-      },
-    ],
-  };
+  }
+
+  public ngOnInit(): void {
+    this.commonService.getVelocityBarDetails(this.selectedType).subscribe((velocityDetails) => {
+      this.velocityDetails = velocityDetails;
+      this.getValues(velocityDetails);
+    })
+  }
+
+  public ngOnChanges(change: SimpleChanges): void {
+    if (change['selectedType']) {
+      this.commonService.getVelocityBarDetails(change['selectedType'].currentValue).subscribe((velocityDetails) => {
+        this.velocityDetails = velocityDetails;
+        this.getValues(velocityDetails);
+      })
+    }
+  }
+
+  getValues(velocityDetails: any): any {
+    const labels:any[] = [];
+    const TERList: any[] = [];
+    const TMSList: any[] = [];
+    velocityDetails?.velocityDataSet?.map((item: any) => {
+      labels.push(item.label);
+      TMSList.push(item.TMS);
+      TERList.push(item.TER);
+    })
+    this._barChartData = {
+      labels: labels,
+      datasets: [
+        {
+          data: TMSList,
+          label: 'TMS',
+          barPercentage: 0.5,
+          borderRadius: 20,
+          backgroundColor: '#7551FF'
+        },
+        {
+          data: TERList,
+          label: 'TER',
+          borderRadius: 20,
+          barPercentage: 0.5,
+          backgroundColor: '#5BABD5'
+        },
+      ],
+    };
+  }
 }

@@ -17,7 +17,7 @@ export class LoginComponent {
   constructor(private formBuilder: FormBuilder, private commonService: CommonService,
     private router: Router, private dataService: DataService) {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -27,8 +27,8 @@ export class LoginComponent {
   }
 
   // Getter methods to access form controls
-  get email() {
-    return this.loginForm.get('email');
+  get username() {
+    return this.loginForm.get('username');
   }
 
   get password() {
@@ -40,18 +40,22 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log('Login Successful!', this.loginForm.value);
     localStorage.setItem('UserDetails', JSON.stringify({...this.loginForm.value, "isLogedIn": true}))
+    this.commonService.openSnackBar('Login Success!!')
     this.commonService.checkLogin(this.loginForm.value).subscribe((userDetails) => {
-      this.dataService.updateUserDetails(userDetails);
-      this.router.navigate(['/overview']);
-    });
-                  
+      if(userDetails.user){
+        localStorage.setItem('UserDetails', JSON.stringify({...userDetails.user, "isLogedIn": true}))
+        localStorage.setItem('bearerToken', userDetails.token);
+        this.dataService.updateUserDetails(userDetails.user);
+        this.router.navigate(['/overview']);
+      }
+    });        
   }
 
   checkUserLogin() {
     const userDetails = JSON.parse(localStorage.getItem('UserDetails') || '');
     if(userDetails.isLogedIn) {
+      this.dataService.updateUserDetails(userDetails);
       this.router.navigate(['/overview']);
     }
   }

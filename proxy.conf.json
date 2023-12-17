@@ -1,0 +1,7 @@
+{
+    "/elevatehub": {
+      "target": "http://10.230.8.51:8080/",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }

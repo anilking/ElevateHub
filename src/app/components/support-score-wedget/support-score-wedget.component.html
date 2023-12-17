@@ -4,13 +4,14 @@
   </div>
   <div class="chart-div">
     <div class="current-score-div">
-      <span class="current-score">{{supportScore.currentScore}}</span>
+      <span class="current-score">{{supportScore.currentScore}}%</span>
       <span class="current-score-cls">Current Score</span>
     </div>
     <um-pie [current]="_current"
             [total]="_total"
             [customIconTemplateKey]="_total < _current ? 'warning' : 'done'"
-            [class._red]="_total < _current || _current === 0">
+            [class._red]="_total < _current || _current === 0"
+            [label]="(_current == 0 ? 'I\'m empty!' : _label) || 'With label'">
     </um-pie>
   </div>
   <div class="badges">
@@ -20,7 +21,7 @@
         <span class="text">Gold</span>
       </div>
       <div class="sub-div">
-        <span class="score-cls-perc">{{supportScore.gold}}%</span>
+        <span class="score-cls-perc">{{supportScore.gold}}</span>
       </div>
     </div>
     <div class="bradge-cls yellow">
@@ -29,7 +30,7 @@
         <span class="text">Silver</span>
       </div>
       <div class="sub-div score-cls-perc">
-        <span>{{supportScore.silver}}%</span>
+        <span>{{supportScore.silver}}</span>
       </div>
     </div>
   </div>
