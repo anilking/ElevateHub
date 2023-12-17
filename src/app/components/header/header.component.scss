@@ -1,14 +1,21 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 app-header {
-    .ux-header-group {
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
+  .ux-header-group {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
 }
 
 .ux-header-group {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.ux-header-row {
+  justify-content: space-between;
+}
+.logoutBtn {
+  margin-right: 20px;
 }
