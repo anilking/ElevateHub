@@ -40,13 +40,12 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    localStorage.setItem('UserDetails', JSON.stringify({...this.loginForm.value, "isLogedIn": true}))
-    this.commonService.openSnackBar('Login Success!!')
     this.commonService.checkLogin(this.loginForm.value).subscribe((userDetails) => {
       if(userDetails.user){
         localStorage.setItem('UserDetails', JSON.stringify({...userDetails.user, "isLogedIn": true}))
         localStorage.setItem('bearerToken', userDetails.token);
         this.dataService.updateUserDetails(userDetails.user);
+        this.commonService.openSnackBar('Login Success!!')
         this.router.navigate(['/overview']);
       }
     });        

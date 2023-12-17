@@ -11,7 +11,7 @@ import { VelocitySummaryWedget } from '../velocity-summary-wedget/velocity-summa
   styleUrls: ['./velocity.component.scss'],
 })
 export class VelocityComponent {
-  selectedMenuItem: string = 'last15Days';
+  selectedMenuItem: string = 'last2Months';
 
   public values = {
     tms: 0,
@@ -22,7 +22,7 @@ export class VelocityComponent {
   public params:any ={
     employeeId:null,
     projectCode: null,
-    duration:"last15Days"
+    duration:"last2Months"
   }
 
   @ViewChild("velocityWidget")

@@ -11,7 +11,7 @@ import { DataService } from 'src/app/data-service.service';
 export class VelocitySummaryWedget {
 
   @Input()
-  public selectedType: string = 'last15Days';
+  public selectedType: string = 'last2Months';
 
   public values = {
     tms: 0,

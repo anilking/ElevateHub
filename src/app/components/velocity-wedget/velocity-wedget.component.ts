@@ -14,7 +14,7 @@ export class VelocityWedgetComponent {
   fromDashboard:boolean = false;
 
   @Input()
-  public selectedType: string = 'last15Days';
+  public selectedType: string = 'last2Months';
 
   public _barChartData: any;
 
