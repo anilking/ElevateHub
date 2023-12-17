@@ -4,14 +4,13 @@
   </div>
   <div class="chart-div">
     <div class="current-score-div">
-      <span class="current-score">{{velocityDetails.totleVelocity}}</span>
+      <span class="current-score">{{perc}}%</span>
       <span class="current-score-cls">Velocity Score</span>
     </div>
-    <um-pie [current]="_current"
-            [total]="_total"
-            [customIconTemplateKey]="_total < _current ? 'warning' : 'done'"
-            [class._red]="_total < _current || _current === 0"
-            [label]="(_current == 0 ? 'I\'m empty!' : _label) || 'With label'">
+    <um-pie [current]="perc"
+            [total]="100"
+            [customIconTemplateKey]="100 < perc ? 'warning' : 'done'"
+            [class._red]="100 < perc || perc === 0">
     </um-pie>
   </div>
   <div class="badges">
@@ -21,16 +20,25 @@
         <span class="text">TER</span>
       </div>
       <div class="sub-div">
-        <span class="score-cls-perc">{{velocityDetails.TER}}%</span>
+        <span class="score-cls-perc">{{values.ter}}</span>
       </div>
     </div>
     <div class="bradge-cls yellow">
       <div class="sub-div score-cls">
         <div class="silver dot-cls left"></div>
-        <span class="text">LOE</span>
+        <span class="text">TMS</span>
       </div>
       <div class="sub-div score-cls-perc">
-        <span>{{velocityDetails.LOE}}%</span>
+        <span>{{values.tms}}</span>
+      </div>
+    </div>
+    <div class="bradge-cls yellow">
+      <div class="sub-div score-cls">
+        <div class="silver dot-cls left"></div>
+        <span class="text">Untracked Hrs</span>
+      </div>
+      <div class="sub-div score-cls-perc">
+        <span>{{values.untracked}}</span>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-overview',
@@ -6,9 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent {
-  user: any = {
-    name: 'Anil Pathuri',
-    role: "Senior Software Engineer"
-  };
+  user: any = {};
 
+  constructor(private dataService: DataService) {
+
+  }
+
+  ngOnInit(): void {
+    this.dataService.userDetails$.subscribe(userDetails => {
+      this.user = userDetails;
+    })
+  }
+
+  
 }
