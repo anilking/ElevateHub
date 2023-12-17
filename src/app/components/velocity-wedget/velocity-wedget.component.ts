@@ -1,6 +1,7 @@
 import { Component, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { CommonService } from 'src/app/common-service.service';
+import { DataService } from 'src/app/data-service.service';
 
 @Component({
   selector: 'app-velocity-wedget',
@@ -8,6 +9,10 @@ import { CommonService } from 'src/app/common-service.service';
   styleUrls: ['./velocity-wedget.component.scss'],
 })
 export class VelocityWedgetComponent {
+
+  @Input()
+  fromDashboard:boolean = false;
+
   @Input()
   public selectedType: string = 'last15Days';
 
@@ -43,24 +48,51 @@ export class VelocityWedgetComponent {
 
   public velocityDetails: any;
 
-  constructor(private commonService: CommonService){
+  constructor(private commonService: CommonService, private dataService: DataService){
 
   }
 
   public ngOnInit(): void {
-    this.commonService.getVelocityBarDetails({"duration": this.selectedType}).subscribe((velocityDetails) => {
-      this.velocityDetails = velocityDetails;
-      this.getValues(velocityDetails);
-    })
+    if(this.fromDashboard){
+      this.getData()
+    }
+
   }
 
-  public ngOnChanges(change: SimpleChanges): void {
-    if (change['selectedType']) {
-      this.commonService.getVelocityBarDetails({"duration": change['selectedType'].currentValue}).subscribe((velocityDetails) => {
-        this.velocityDetails = velocityDetails;
-        this.getValues(velocityDetails);
-      })
-    }
+  updateBarchartOptions(labels:any, TMSList:any, TERList:any, untracked:any, values: any){
+    this.values = values;
+    this._barChartData = {
+      labels: labels,
+      datasets: [
+        {
+          data: TMSList,
+          label: 'TMS',
+          barPercentage: 0.5,
+          borderRadius: 20,
+          backgroundColor: '#7551FF'
+        },
+        {
+          data: TERList,
+          label: 'TER',
+          borderRadius: 20,
+          barPercentage: 0.5,
+          backgroundColor: '#5BABD5'
+        },
+        {
+          data: untracked,
+          label: 'Untracked Hrs',
+          barPercentage: 0.5,
+          borderRadius: 30,
+          backgroundColor: '#99BF4D'
+        }
+      ],
+    };
+  }
+
+  getData(){
+    this.commonService.getVelocityBarDetails("duration=last30Days").subscribe((velocityDetails) => {
+      this.getValues(velocityDetails);
+    })
   }
 
   getValues(velocityDetails: any): any {
@@ -140,31 +172,7 @@ velocityDetails?.data?.timesheet?.map((item: any) => {
       ter:TERList.reduce((result, item) => result+=item),
       untracked: untracked.reduce((result, item) => result+=item)
     }
-    this._barChartData = {
-      labels: labels,
-      datasets: [
-        {
-          data: TMSList,
-          label: 'TMS',
-          barPercentage: 0.5,
-          borderRadius: 20,
-          backgroundColor: '#7551FF'
-        },
-        {
-          data: TERList,
-          label: 'TER',
-          borderRadius: 20,
-          barPercentage: 0.5,
-          backgroundColor: '#5BABD5'
-        },
-        {
-          data: untracked,
-          label: 'Untracked Hrs',
-          barPercentage: 0.5,
-          borderRadius: 30,
-          backgroundColor: '#99BF4D'
-        }
-      ],
-    };
+
+    this.updateBarchartOptions(labels, TMSList, TERList, untracked, this.values);
   }
 }

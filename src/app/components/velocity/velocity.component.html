@@ -26,32 +26,33 @@
     <!-- <ul class="dropdowns" *ngIf="user.roles === 'MGR'"> -->
     <ul class="dropdowns">
       <li class="project-item">
-        <ux-reference-field
+        <ux-dropdown-field
           size="small"
           [items]="projectsList"
           label="Project"
-          (onValueChange)="handleProjectChange(projectsList[0])"
-        ></ux-reference-field>
+          (onValueChange)="handleProjectChange($event)"
+        ></ux-dropdown-field>
       </li>
       <li class="employee-item">
-        <ux-reference-field
+        <ux-dropdown-field
           size="small"
           [items]="usersList"
           label="Employee"
-          (onValueChange)="handleEmpChange(usersList[0])"
-        ></ux-reference-field>
+          (onValueChange)="handleEmpChange($event)"
+        ></ux-dropdown-field>
       </li>
     </ul>
   </div>
   <div class="first-row">
     <um-card class="_min-padding velocity">
       <app-velocity-wedget
+      #velocityWidget
         [selectedType]="selectedMenuItem"
       ></app-velocity-wedget>
     </um-card>
 
     <um-card class="_min-padding support-score">
-      <app-velocity-summary-wedget [selectedType]="selectedMenuItem"></app-velocity-summary-wedget>
+      <app-velocity-summary-wedget #velocitySummaryWidget [selectedType]="selectedMenuItem"></app-velocity-summary-wedget>
     </um-card>
   </div>
 </div>

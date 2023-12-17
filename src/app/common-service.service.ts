@@ -63,14 +63,8 @@ export class CommonService {
     )
   }
 
-  getVelocityBarDetails(requestObj: any): Observable<any> {
-    let url = `${this.apiUrl}/users/velocity?duration=${requestObj.duration}`;
-    if(requestObj.employeeId) {
-      url = '${url}&employeeId=${requestObj.employeeId}'
-    }
-    if(requestObj.projectCode) {
-      url = '${url}&projectCode=${requestObj.projectCode}'
-    }
+  getVelocityBarDetails(requestObj: string): Observable<any> {
+    let url = `${this.apiUrl}/users/velocity?${requestObj}`;
 
     return this.http.get<any>(url);
     // return of(
